@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Summary of my GSOC experience | Fabrizio  Sandri</title>
+    <meta name="author" content="Fabrizio  Sandri" />
+    <meta name="description" content="The summary of my experience with GSOC and a brief recap of my work" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/monokai.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/blog/2022/gsoc-summary/">
+    
+    <!-- Dark Mode -->
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Fabrizio </span>Sandri</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">Projects</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">Curriculum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Summary of my GSOC experience</h1>
+    <p class="post-meta">September 8, 2022</p>
+    <p class="post-tags">
+      <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
+        ·  
+        <a href="/blog/tag/gsoc-summary">
+          <i class="fas fa-hashtag fa-sm"></i> GSOC Summary</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="introduction">Introduction</h2>
+<p>The conclusion of this long and magnificent experience of GSOC, which began around five months ago, has arrived, and it is now time to recap the points of this long journey. I knew from the first day that this was going to be a fantastic experience, but I never expected to learn so much this summer!</p>
+
+<p>It all started some months ago when my thesis supervisor advised that I engage in this initiative that Google has been doing for several years. My thesis supervisor put me in touch with a PhD student at the University of Trento who had previously participated in GSOC and is now a mentor. Fascinated by his experience, I set out to work to ensure that my proposal was chosen. After several weeks of effort, I submitted my project idea, and on May 20, I received an email informing me that I had been accepted for GSOC 2022; I was overjoyed!</p>
+
+<h2 id="gsoc-work">GSOC work</h2>
+<p>The first three weeks of work, known as the Community Bonding period, have been a chance for me to study and become familiar with the tools that I would be using for the next ten weeks. This period was really beneficial to me since I was able to immerse myself into the R community while also learning a lot of new topics thanks to my blog posts: writing them helped me keep track of everything I had been studying.</p>
+
+<p>In accordance with the <a href="https://github.com/rstats-gsoc/gsoc2022/wiki/RcppDeepState#details-of-your-coding-project" target="_blank" rel="noopener noreferrer">goal of my project</a> I’ve been working on two distinct repositories:</p>
+<ul>
+  <li>
+<a href="https://github.com/FabrizioSandri/RcppDeepState" target="_blank" rel="noopener noreferrer">FabrizioSandri/RcppDeepState</a> : the RcppDeepState package implementation, which runs fuzz testing with Valgrind and DeepState;</li>
+  <li>
+<a href="https://github.com/FabrizioSandri/RcppDeepState-action" target="_blank" rel="noopener noreferrer">FabrizioSandri/RcppDeepState-action</a> : Implementation of the GitHub action that allows developers to execute RcppDeepState on GitHub-hosted Rcpp-based packages. The action is also available on the <a href="https://github.com/marketplace/actions/rcppdeepstate" target="_blank" rel="noopener noreferrer">GitHub Marketplace</a>.</li>
+</ul>
+
+<p>All of my progress on the two aforementioned repositories is documented in the pull requests and issues listed underneath. Furthermore, the week summaries that I posted at the end of each week give a more detailed explanation of the changes that I made week by week; you can find them <a href="https://fabriziosandri.github.io/gsoc-2022-blog/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<h5 id="fabriziosandrircppdeepstate-action">FabrizioSandri/RcppDeepState-action</h5>
+<table class="recap-table">
+  <tr>
+    <th>Pull requests</th>
+    <th>Issues</th>
+  </tr>
+  <tr>
+    <td class="recap-table-cell recap-left-cell">
+      <ul>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/1" target="_blank" rel="noopener noreferrer">#1 First prototype</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/2" target="_blank" rel="noopener noreferrer">#2 Exit codes</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/3" target="_blank" rel="noopener noreferrer">#3 Input arguments</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/4" target="_blank" rel="noopener noreferrer">#4 Composite action</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/6" target="_blank" rel="noopener noreferrer">#6 Action's comments</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/7" target="_blank" rel="noopener noreferrer">#7 Action's comments - 2</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/8" target="_blank" rel="noopener noreferrer">#8 Additional arguments and documentation</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/9" target="_blank" rel="noopener noreferrer">#9 Docker hub integration</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/10" target="_blank" rel="noopener noreferrer">#10 Report size exceeds the maximum GitHub comment size</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/12" target="_blank" rel="noopener noreferrer">#12 Docker Hub tags problem</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/15" target="_blank" rel="noopener noreferrer">#15 Report details</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/17" target="_blank" rel="noopener noreferrer">#17 Get errors count</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/18" target="_blank" rel="noopener noreferrer">#18 Parameters names/values</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/20" target="_blank" rel="noopener noreferrer">#20 Dependencies issue</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/21" target="_blank" rel="noopener noreferrer">#21 Action logs enhancement</a></li>
+      </ul>
+    </td>  
+    <td class="recap-table-cell">
+      <ul>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/2" target="_blank" rel="noopener noreferrer">#2 Segmentation fault not catched</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/4" target="_blank" rel="noopener noreferrer">#4 Fuzzing functions with Rcpp parameters</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/7" target="_blank" rel="noopener noreferrer">#7 Valgrind for initial pass</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/8" target="_blank" rel="noopener noreferrer">#8 RcppDeepState optimization options</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/10" target="_blank" rel="noopener noreferrer">#10 Missing Rcpp Strings support</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/13" target="_blank" rel="noopener noreferrer">#13 Wrong inputs column</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/18" target="_blank" rel="noopener noreferrer">#18 Valgrind and Clang-14 dwarf support</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h5 id="fabriziosandrircppdeepstate">FabrizioSandri/RcppDeepState</h5>
+
+<table class="recap-table">
+  <tr>
+    <th>Pull requests</th>
+    <th>Issues</th>
+  </tr>
+  <tr>
+    <td class="recap-table-cell recap-left-cell">
+      <ul>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/1" target="_blank" rel="noopener noreferrer">#1 Makefile generation fix and improvements</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/3" target="_blank" rel="noopener noreferrer">#3 Override default Makevars</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/5" target="_blank" rel="noopener noreferrer">#5 Harness creation improvements</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/6" target="_blank" rel="noopener noreferrer">#6 Debug symbols tests</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/9" target="_blank" rel="noopener noreferrer">#9 Logging improvements</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/11" target="_blank" rel="noopener noreferrer">#11 Rcpp string support</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/12" target="_blank" rel="noopener noreferrer">#12 Fuzz only supported functions</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/14" target="_blank" rel="noopener noreferrer">#14 qs::c_qsave moved to the runner</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/15" target="_blank" rel="noopener noreferrer">#15 Automatically setup CI</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/16" target="_blank" rel="noopener noreferrer">#16 Harness creation improvements - 2</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/17" target="_blank" rel="noopener noreferrer">#17 Custom test harness</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/19" target="_blank" rel="noopener noreferrer">#19 Harness unit test name</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/20" target="_blank" rel="noopener noreferrer">#20 Editable functions</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/21" target="_blank" rel="noopener noreferrer">#21 Harness unit test name - 2</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/22" target="_blank" rel="noopener noreferrer">#22 Exit status codes</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/23" target="_blank" rel="noopener noreferrer">#23 Harness creation improvements - 3</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/24" target="_blank" rel="noopener noreferrer">#24 Makevars issue</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/25" target="_blank" rel="noopener noreferrer">#25 Dependencies problem</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/26" target="_blank" rel="noopener noreferrer">#26 IntegerMatrix support</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/27" target="_blank" rel="noopener noreferrer">#27 Dependencies issue</a></li>
+      </ul>
+    </td>  
+    <td class="recap-table-cell">
+      <ul>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/5" target="_blank" rel="noopener noreferrer">#5 what to do when auto comments are too large?</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/11" target="_blank" rel="noopener noreferrer">#11 Docker Hub integration trigger event</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/13" target="_blank" rel="noopener noreferrer">#13 SHA in PR comment?</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/14" target="_blank" rel="noopener noreferrer">#14 beta test on other packages?</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/16" target="_blank" rel="noopener noreferrer">#16 parameter names / value?</a></li>
+      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/19" target="_blank" rel="noopener noreferrer">#19 Not finding source files from DESCRIPTION LinkingTo: field?</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h2 id="future-work">Future work</h2>
+<p>There’s still a lot to accomplish with RcppDeepstate, and I’m specifically talking to the fact that a future step would be the package’s release on CRAN. As the goal of my project, I spent a lot of time during the GSOC improving RcppDeepState for a future CRAN publication, but with all of the problems related to Deepstate portability on Windows-based systems, I believe that this is a future step, as demonstrated by the results obtained after uploading the package on Win-builder: most of the errors were caused by the use of a Windows system.</p>
+
+<p>Another step would be to expand RcppDeepState’s datatype coverage by introducing additional datatypes, allowing RcppDeepState to run on a broader range of packages. To do this, I created a wiki article that describes how to <a href="https://github.com/FabrizioSandri/RcppDeepState/wiki/Add-a-new-datatype-to-RcppDeepState" target="_blank" rel="noopener noreferrer">Add a new datatype to RcppDeepState</a>. The scope of this page has been successfully shown thanks to Dr.Martin R. Smith’s first external contribution to the RcppDeepState package. More information is available in the <a href="https://fabriziosandri.github.io/gsoc-2022-blog/github%20action/2022/09/02/beta-test-summary.html" target="_blank" rel="noopener noreferrer">dedicated blog post</a>.</p>
+
+<p>Another future improvement would be to provide a new option to RcppDeepState-action that allows users to choose a different fuzzer than the default one provided by Deepstate; Libfuzzer, Manticore and Angr are three alternative fuzzers.</p>
+
+<h2 id="my-gsoc-experience">My GSOC experience</h2>
+<p>My gsoc experience was incredible, something I never imagined, and it was one of the best in my career. This experience taught me a lot about working with others and contributing to open source. At the end of this experience, I can certainly say that I will spend more time to open source than the time I’ve spent so far. As a maintainer, I will continue to contribute to my project.</p>
+
+<p>I am grateful to all of my mentors who took the time to guide me through this journey and share their unique experience and knowledge with me. Special thanks go to:</p>
+<ul>
+  <li>my evaluating mentor Dr.Toby Dylan Hocking, who has always been available to help me during the Google Summer of Code. I was able to stay on track and keep up the good work thanks to his helpful guidance.</li>
+  <li>my mentor Randy Lai, who helped me with his great experience with GitHub Actions to improve the RcppDeepState action;</li>
+  <li>my mentor Anirban Chetia, who gave me good suggestions on the challenges I had in the early stages of utilizing RcppDeepState;</li>
+  <li>Dr.Martin R. Smith, for his great availability to beta test my GitHub action on his packages and for integrating a new datatype to RcppDeepState;</li>
+  <li>all of the R community people I’ve interacted with on GitHub, the RcppCore team;</li>
+  <li>Google/GSOC for organizing this fantastic event year after year.</li>
+</ul>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+    <!--    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        &copy; Copyright 2022 Fabrizio  Sandri. 
+      </div>
+    </footer> -->
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RcppDeepState's GitHub Action considerations | Fabrizio  Sandri</title>
+    <meta name="author" content="Fabrizio  Sandri" />
+    <meta name="description" content="An introduction to GitHub Actions and some consideration before writing the GitHub Action for RcppDeepState" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/monokai.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/blog/2022/github-actions/">
+    
+    <!-- Dark Mode -->
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Fabrizio </span>Sandri</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">Projects</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">Curriculum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">RcppDeepState's GitHub Action considerations</h1>
+    <p class="post-meta">June 28, 2022</p>
+    <p class="post-tags">
+      <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
+        ·  
+        <a href="/blog/tag/github-action">
+          <i class="fas fa-hashtag fa-sm"></i> GitHub Action</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="introduction">Introduction</h2>
+<p>Continuous integration and Continuous delivery, also called CI/CD, are two useful methodologies that every developer have hear about. 
+This terms refers to the possibility of continuously perform some task with your code in an automated way.</p>
+
+<p>Continuous integration, often, relies on executing automatic testing to check that an application is correctly behaving. On the other hand, continuous delivery refers to the process of automatically move the code from a testing environment to a production environment.</p>
+
+<p>These two methodologies, can be implemented in any Git repository using tools such as GitHub Actions and TravisCI. I will focus only on GitHub Actions, which is a feature implemented by the GitHub platform, which allows to create complex workflows in any kind of repository.</p>
+
+<h4 id="github-actions">GitHub Actions</h4>
+<p>GitHub actions are fully integrated with GitHub and can respond to any specified GitHub event (new issue, pull request, push on a branch). This is a fully automated engine and GitHub Actions comes with a lot of pre-defined workflows that are provided by communities. A powerful functionality provided by GitHub actions is the possibility to run the code on different operating systems, such as Linux, Windows, macOS and Docker containers.</p>
+
+<p>GitHub Actions are composed of three components: an event, a workflow and an action. Everything start with an event that triggers the execution of a workflow, which is composed of different jobs to compute some operations. Actions instead are reusable units of code that are called within a workflow with the <code class="language-plaintext highlighter-rouge">with</code> parameter.</p>
+
+<h2 id="github-actions-and-rcppdeepstate">Github Actions and RcppDeepState</h2>
+<p>In the previous posts, I demonstrated the efficacy of RcppDeepState in detecting issues in Rcpp-based libraries. Based on this, in order to make it easier for developers to execute RcppDeepState on any R package hosted in a GitHub repository, it will be useful to integrate RcppDeepState inside a GitHub Action.
+This is exactly the main goal of my Google Summer Of Code project, but before getting started on the development of the GitHub Action, there are a few things to take into account.</p>
+
+<h4 id="considerations">Considerations</h4>
+<p>Here is a list of considerations that will help me during the development of the RcppDeepState GitHub Action.</p>
+<ol>
+  <li>The first thing I need to take into account is the choice of the architecture for the GitHub Action. According to the GitHub documentation<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> there are three ways to create an Action:
+    <ul>
+      <li>Docker container Action</li>
+      <li>Javascript Action</li>
+      <li>Composite Action</li>
+    </ul>
+  </li>
+  <li>While developing the Action I need to consider that all the optimization parameters must be disabled in order to get the best performance of RcppDeepState. The motivation behind this choice is explained in the <a href="https://github.com/FabrizioSandri/RcppDeepState/issues/8" target="_blank" rel="noopener noreferrer">Issue #8</a>.</li>
+  <li>Define the inputs and the outputs of the Action.</li>
+  <li>The Action will likely be published on the GitHub Marketplace in the future so that developers can easily find it on the GitHub platform. As a result, I decided it would be better to build it in a different repository. This will, as stated in the documentation<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, decouple the versioning of the action from the versioning of the RcppDeepState application code.
+    <blockquote>
+      <p>If you’re developing an action for other people to use, we recommend keeping the action in its own repository instead of bundling it with other application code. This allows you to version, track, and release the action just like any other software.</p>
+
+      <p>Storing an action in its own repository makes it easier for the GitHub community to discover the action, narrows the scope of the code base for developers fixing issues and extending the action, and decouples the action’s versioning from the versioning of other application code.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h4 id="development">Development</h4>
+<p>As mentioned in the Considerations section, this GitHub Action will be entirely developed in a separate repository that can be found at the following link: <a href="https://github.com/FabrizioSandri/RcppDeepState-action" target="_blank" rel="noopener noreferrer">RcppDeepState-action</a>.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://docs.github.com/en/actions/creating-actions" target="_blank" rel="noopener noreferrer">GitHub documentation: Creating actions</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://docs.github.com/en/actions/creating-actions/about-custom-actions#choosing-a-location-for-your-action" target="_blank" rel="noopener noreferrer">GitHub documentation: Choosing a location for your action</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+    <!--    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        &copy; Copyright 2022 Fabrizio  Sandri. 
+      </div>
+    </footer> -->
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{% assign index = {{forloop.index}} %}
+
+<!-- _includes/projects.html -->
+<div class="card project-card" >
+  <div class="card-header hoverable" data-toggle="collapse" data-target="#collapse{{ index }}" role="button">
+    <div class="row">
+      <div class="col-md-3">
+        {%- if project.img %}
+        <img class="card-img" src="{{ project.img }}" alt="project thumbnail">
+        {%- endif %}
+      </div>
+      <div class="col-md-9">
+        <h2 class="card-title">{{ project.title }}</h2>
+        <p class="project-description">{{ project.description }}</p>
+        <div class="project-description row">
+          <div class="col-sm-4">
+            {%- if project.start -%}
+            <p>Year started: {{ project.start }}</p>
+            {%- endif %}
+          </div>
+          <div class="col-sm-4">
+            {%- if project.end -%}
+            <p>Year ended: {{ project.end }}</p>
+            {%- endif %}
+          </div>          
+        </div>          
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="expand" data-toggle="collapse" data-target="#collapse{{ index }}" role="button" href="#">
+    <i class="fas fa-expand-alt"></i>
+  </div>
+
+  
+  <div class="collapse" id="collapse{{ index }}">
+    <div class="card-body">
+      <p>{{ project.content }}</p>
+
+      <div class="project-description">
+        {%- if project.additional -%}
+          <p>
+            You can find more information <a href="{{ project.additional }}">here</a>
+          </p>
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+  
+  
+</div>

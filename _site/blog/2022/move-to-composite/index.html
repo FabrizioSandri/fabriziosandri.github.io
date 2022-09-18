@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Moving to a composite GitHub Action | Fabrizio  Sandri</title>
+    <meta name="author" content="Fabrizio  Sandri" />
+    <meta name="description" content="Considerations review" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/monokai.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/blog/2022/move-to-composite/">
+    
+    <!-- Dark Mode -->
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Fabrizio </span>Sandri</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">Projects</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">Curriculum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Moving to a composite GitHub Action</h1>
+    <p class="post-meta">July 11, 2022</p>
+    <p class="post-tags">
+      <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
+        ·  
+        <a href="/blog/tag/github-action">
+          <i class="fas fa-hashtag fa-sm"></i> GitHub Action</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="introduction">Introduction</h2>
+<p>In the fifth week of work I’ve created a first working prototype of the GitHub Action for RcppDeepState, based on the considerations that I published in the dedicated blog post<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Within this post, I discussed three different architectures that might be used when creating a GitHub Action. Among the three possibilities, I selected to develop a GitHub action based on Docker.</p>
+
+<p>However, in the pull request for the Action’s initial prototype, I indicated the potential of switching from a Docker Action to a Composite Action<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>:</p>
+<blockquote>
+  <p>“In the future, I’ll also think about if I can express this Action as a composite action.”</p>
+</blockquote>
+
+<h2 id="docker-system-motivation">Docker system motivation</h2>
+<p>The key reason for using a Docker-based system is that it enables for the creation of a fully customized environment in which RcppDeepState will execute. This allows me to install only the essential tools and configure the environment such that RcppDeepState fits in. In particular the idea came by the fact that RcppDeepState requires that optimization options must be disabled in the system in order to work with it’s maximum performance. Furthermore, because RcppDeepState can only be executed on Linux-based computers, limiting it to a Docker system based on a Linux container is a reasonable option.</p>
+
+<h2 id="problem">Problem</h2>
+<p>However, not everything works well with the Docker system since it lacks the final user interaction. This is a crucial consideration because it is what the final user will see. If the user is unable to detect or rapidly identify the errors in a package, the entire Action will be useless. Using the docker architecture, the action can only print the results in the log in text format, without allowing the results to be uploaded as an artifact file and shared with other steps/jobs in the workflow.</p>
+
+<h2 id="solution">Solution</h2>
+<p>Starting with this I searched for a solution to the problem and discovered that <code class="language-plaintext highlighter-rouge">actions/upload-artifact</code> allows to share the analysis findings with other jobs by publishing an artifact file. The <code class="language-plaintext highlighter-rouge">actions/upload-artifact</code> would be handy for RcppDeepState since it may be configured to upload the analyzed package’s ‘inst/testfiles’ folder, which contains the inputs as well as the Valgrind outputs of the RcppDeepState execution.</p>
+
+<p>The issue is that publishing an artifact file via the Docker system is a challenging operation. One possibility is to combine the present Docker system with a Composite Action to gain the benefits of both systems. Thus in this week of work(seventh week) I will integrate the existing docker system with a composite action. The primary action will be the composite one, and the docker action will be triggered by a composite step.</p>
+
+<hr>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://fabriziosandri.github.io/gsoc-2022-blog/github%20action/2022/06/28/github-actions.html" target="_blank" rel="noopener noreferrer">RcppDeepState’s GitHub Action considerations</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/1" target="_blank" rel="noopener noreferrer">First prototype</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+    <!--    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        &copy; Copyright 2022 Fabrizio  Sandri. 
+      </div>
+    </footer> -->
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+  </body>
+</html>

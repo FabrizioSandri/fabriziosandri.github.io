@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DeepState introduction | Fabrizio  Sandri</title>
+    <meta name="author" content="Fabrizio  Sandri" />
+    <meta name="description" content="A quick introduction to DeepState fuzzing library" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/monokai.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/blog/2022/about-deepstate/">
+    
+    <!-- Dark Mode -->
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Fabrizio </span>Sandri</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">Projects</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">Curriculum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">DeepState introduction</h1>
+    <p class="post-meta">May 25, 2022</p>
+    <p class="post-tags">
+      <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
+        ·  
+        <a href="/blog/tag/deepstate">
+          <i class="fas fa-hashtag fa-sm"></i> DeepState</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h1 id="deepstate-introduction">DeepState Introduction</h1>
+<p>DeepState is a framework which provides developers the possibility to perform symbolic unit testing on some particular C++ functions by writing test harnesses. For writing a test harness, Deepstate follows a similar approch to the one of Google tests <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.
+The common problem between most of the symbolic unit testing libraries is that you as developer have to know how to use other binary analysis tools. With Deepstate this problem is solved by provinding a common interface the test harness creation process.</p>
+
+<h2 id="installation">Installation</h2>
+<p>The installation process is quite simple, you just need to follow the istruction provided in the <em>Readme</em> file in the Deepstate repository on GitHub <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. In my case after the installation of all the necessary dependencies, I downloaded the repository snapshot using the standard <code class="language-plaintext highlighter-rouge">git clone</code> approach</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/trailofbits/deepstate.git
+</code></pre></div></div>
+
+<p>and then started the compilation process with the auxiliary of <em>Make</em> tools</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>deepstate/build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>deepstate/build
+cmake ../
+make
+</code></pre></div></div>
+
+<p>If the compilation process succeed the next step is the installation of the compiled files in the proper location in the host system:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div></div>
+
+<h2 id="test-harness-creation">Test Harness creation</h2>
+<p>Testing C++ code is not a straightforward task and it need to be accomplished in the correct way, otherwise it will lead to a failure both in the test and also in the source code. A Test Harness is a collection of software that allows to test a particular program by executing under some conditions.</p>
+
+<p>The first step in test harness creation is to include  the library and optionally set the namespace, in order to use all the functionalities provided by DeepState :</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;deepstate/DeepState.hpp&gt;</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">deepstate</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>A Test Harness definition in DeepState starts with the <code class="language-plaintext highlighter-rouge">TEST</code> macro. This macro takes two arguments as input:</p>
+<ul>
+  <li>a unit name</li>
+  <li>a test name</li>
+</ul>
+
+<p>The body of the function that starts with <code class="language-plaintext highlighter-rouge">TEST</code> will contain the following parts:</p>
+<ul>
+  <li>symbols definition</li>
+  <li>pre-conditions</li>
+  <li>post-conditions</li>
+</ul>
+
+<p>Let’s dive into this three main parts of a Test Harness creation procedure.</p>
+
+<h3 id="symbols-definition">Symbols definition</h3>
+<p>The first part consists in the definition of the symbols that will be used as input for the function we need to test. The main goal for this task is to have a set of variables that will be filled by the DeepState with some non-deterministic data.</p>
+
+<p>Symbolic execution tools and fuzzers needs to know which variable is symbolic in order to control them. Symbols definitions for basic data types (<code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">char</code>, ..) are defined by concatenating the data type name with the <code class="language-plaintext highlighter-rouge">symbolic_</code> prefix (<code class="language-plaintext highlighter-rouge">symbolic_int</code>, <code class="language-plaintext highlighter-rouge">symbolic_char</code>, ..).</p>
+
+<p>DeepState provides us some useful functions to initialize our symbols with random data:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">int DeepState_IntInRange(int low, int high)</code> : initializes the symbol with an integer in the range low-high</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">float DeepState_FloatInRange(float low, float high)</code> : initializes the symbol with a float number in the range low-high</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">double DeepState_DoubleInRange(double low, double high)</code> : initializes the symbol with a double number in the range low-high</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">char* DeepState_CStr_C(size_t len, const char* allowed)</code> : initializes a character array (a string)  of length <code class="language-plaintext highlighter-rouge">len</code> with a set of allowed character taken from the character array `allowed</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">char* DeepState_CStrUpToLen(size_t maxLen, const char* allowed)</code> : initializes a character array (a string) of length  up to <code class="language-plaintext highlighter-rouge">len</code> with a set of allowed character taken from the character array <code class="language-plaintext highlighter-rouge">allowed</code>
+</li>
+</ul>
+
+<h3 id="pre-conditions">Pre conditions</h3>
+<p>Sometimes there is the necessity to constraint a little bit more the symbolic variables defined previously. This means that you have some particular constraint that your symbolic variable need to comply with, before running into the tests. All the tests that do not pass the pre conditions will be considered <code class="language-plaintext highlighter-rouge">abandoned</code>.</p>
+
+<p>Pre conditions are defined using the <code class="language-plaintext highlighter-rouge">ASSUME</code> macro and also by the following more specialized ones:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">ASSUME_EQ</code> : checks for the equality of the 2 parameters (operator ==)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ASSUME_NE</code> : checks if the 2 parameters are not equal (operator !=)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ASSUME_LT</code> : checks if the first parameter is less than the second (operator &lt;)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ASSUME_LE</code> : checks if the first parameter is less or equal to the second (operator &lt;=)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ASSUME_GT</code> : checks if the first parameter is greater than the second (operator &gt;)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ASSUME_GE</code> : checks if the first parameter is greater or equal to the second (operator &gt;=)</li>
+</ul>
+
+<h4 id="example">Example</h4>
+<p>Suppose you have to pass to your test only strings with a minimum length of 5 characters and up to 10 characters (both inclusive). This types of strings can not be created by only using <code class="language-plaintext highlighter-rouge">DeepState_CStrUpToLen</code>. We have to constraint the fact that the length of the string should also be greater then 5. This may be accomplished by using a precondition that checks if the created string meets the requirement that its length be larger than or equal to 5. With the preceding list in mind, this can be implemented with the <code class="language-plaintext highlighter-rouge">ASSUME_GE</code> macro in the following way:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TEST</span><span class="p">(</span><span class="n">UnitName</span><span class="p">,</span> <span class="n">TestName</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kt">char</span><span class="o">*</span> <span class="n">str</span> <span class="o">=</span> <span class="n">DeepState_CStrUpToLen</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s">"abcdefABCDEF"</span><span class="p">);</span>
+    <span class="n">ASSUME_GE</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">),</span> <span class="mi">5</span><span class="p">);</span>
+    
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="post-conditions">Post conditions</h3>
+<p>The last part is the check of the execution result of a test. This can be done with post conditions that checks if the results satisfy some constraints. Similar to the pre conditions, the post condition defines a list of macros that help us to perform this checks. This time a post condition is defined using the <code class="language-plaintext highlighter-rouge">ASSERT</code> macro and all it’s specialized versions (<code class="language-plaintext highlighter-rouge">ASSERT_EQ</code>, <code class="language-plaintext highlighter-rouge">ASSERT_NE</code>, <code class="language-plaintext highlighter-rouge">ASSERT_FALSE</code>, …).</p>
+
+<h4 id="example-1">Example</h4>
+<p>Assume that we want to test a function that compress a string as input into a fixed length string : an hash function like MD5. A possible post condition will check if the hashed string is of a certain length (in the case of md5, exactly 32 characters).</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TEST</span><span class="p">(</span><span class="n">UnitName</span><span class="p">,</span> <span class="n">TestName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">str</span> <span class="o">=</span> <span class="n">DeepState_CStrUpToLen</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s">"abcdefABCDEF"</span><span class="p">);</span>
+
+    <span class="c1">// Pre conditions</span>
+    <span class="n">ASSUME_GE</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">),</span> <span class="mi">5</span><span class="p">);</span>
+
+    <span class="c1">// execution</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">hashedString</span> <span class="o">=</span> <span class="n">md5</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+    <span class="c1">// post conditions</span>
+    <span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">hashedString</span><span class="p">),</span> <span class="mi">32</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="test-harness-compilation">Test harness compilation</h3>
+<p>You can compile the test harness using a standard C++ compiler like g++ by specifying the linker to include the deepstate header with the <code class="language-plaintext highlighter-rouge">-ldeepstate</code> parameter</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++ <span class="nt">-ldeepstate</span> <span class="nt">-o</span> harness harness.cpp 
+</code></pre></div></div>
+
+<p>The output of this procedure is a compiled harness file that can be executed.</p>
+
+<h2 id="fuzz-test-execution">Fuzz test execution</h2>
+<p>The compiled test harness can be executed using some analysis tools like <code class="language-plaintext highlighter-rouge">manticore</code>, <code class="language-plaintext highlighter-rouge">angr</code> or <code class="language-plaintext highlighter-rouge">valgrind</code> to discover memory leaks in the code. You can also run it in a standalone mode by executing it directly in the console with the <code class="language-plaintext highlighter-rouge">--fuzz</code> option. This last option enables DeepState to perform brute force fuzzing. Another useful option is <code class="language-plaintext highlighter-rouge">--timeout</code> that allows to specify a timeout(in seconds) after which the fuzzing procedure will be stopped. In addition with the <code class="language-plaintext highlighter-rouge">--input_which_test</code> you can specify the test to execute in the format <code class="language-plaintext highlighter-rouge">UnitName_TestName</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./harness <span class="nt">--fuzz</span> <span class="nt">--timeout</span><span class="o">=</span>5 <span class="nt">--input_which_test</span> UnitName_TestName
+</code></pre></div></div>
+
+<p>This execution will give us the total number of <em>failed</em>, <em>passed</em> and <em>abandoned</em> tests</p>
+
+<h2 id="advanced-fuzz-testing">Advanced fuzz testing</h2>
+<p>I’ll go through how to use DeepState in conjunction with more complex tools like Valgrind in the next blog posts.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://google.github.io/googletest/" target="_blank" rel="noopener noreferrer">https://google.github.io/googletest/</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://github.com/trailofbits/deepstate#buildnrun" target="_blank" rel="noopener noreferrer">https://github.com/trailofbits/deepstate#buildnrun</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+    <!--    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        &copy; Copyright 2022 Fabrizio  Sandri. 
+      </div>
+    </footer> -->
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+  </body>
+</html>
