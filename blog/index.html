@@ -1,17 +1,6 @@
 ---
 layout: default
 title: blog
-paginate: true
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 5
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
 ---
 
 <div class="post">
@@ -45,7 +34,7 @@ pagination:
   </div>
 
   <ul class="post-list">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
 
     {% if post.external_source == blank %}
       {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
