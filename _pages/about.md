@@ -19,6 +19,6 @@ I received my B.Sc. at University of Trento in 2022, where I was advised by [Alb
 
 During my time at the University of Trento, I actively contributed to many open source projects including the [NASA FPrime](https://github.com/nasa/fprime) framework - a flight software and embedded systems framework - and the [Data & Analytics Framework](https://docs.italia.it/italia/daf/) for the Italian Developers community - a community of developers who code and design Italian digital public services. 
 
-Currently I am participating in [Google Summer of Code 2022](https://summerofcode.withgoogle.com/programs/2022/projects/t87xbcg2) as a software developer for the [R project for statistical computing](https://www.r-project.org/) to integrate the [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState) library with GitHub Actions - [RcppDeepState-action](https://github.com/marketplace/actions/rcppdeepstate).
+I participated in the [Google Summer of Code 2022](https://summerofcode.withgoogle.com/programs/2022/projects/t87xbcg2) as a software developer for the [R project for statistical computing](https://www.r-project.org/) to integrate the [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState) library with GitHub Actions - [RcppDeepState-action](https://github.com/marketplace/actions/rcppdeepstate).
 
 
