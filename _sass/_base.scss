@@ -668,11 +668,28 @@ html.transition *:after {
   margin-bottom: 1em;
 }
 
+.card-title {
+  margin-bottom: 0em;
+}
 
 @media only screen and  (max-width: 43em) {  
   .card-img{
-    max-height: inherit;
+    display: none;
+  }
+
+  .card-img2{
+    width: 5em !important;
+    border: 1px solid black;
     object-fit: contain;
+    display: inline;
+  }
+
+  .project-description {
+    margin-top: 1em;
+  }
+
+  .project-title-div {
+    margin-left: 1em;
   }
 }
 
@@ -682,6 +699,10 @@ html.transition *:after {
     width: 10rem;
     border: 1px solid black;
     object-fit: contain;
+  }
+
+  .card-img2{
+    display: none;
   }
 }
 
