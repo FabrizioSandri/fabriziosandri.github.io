@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 I am a Student at the University of Trento currently undertaking my master's degree in Computer Science with a specialization in Data Science.
-I received my B.Sc. at University of Trento in 2022, where I was advised by [Alberto Montresor](https://cricca.disi.unitn.it/montresor/) for my thesis project on Stellar as an alternative to the Bitcoin Proof-of-Work consensus protocols.
+I got my B.Sc. at University of Trento in 2022, where I was advised by [Alberto Montresor](https://cricca.disi.unitn.it/montresor/) for my thesis project on Stellar as an alternative to the Bitcoin Proof-of-Work consensus protocols.
 
 During my time at the University of Trento, I actively contributed to many open source projects including the [NASA FPrime](https://github.com/nasa/fprime) framework - a flight software and embedded systems framework - and the [Data & Analytics Framework](https://docs.italia.it/italia/daf/) for the Italian Developers community - a community of developers who code and design Italian digital public services. 
 
