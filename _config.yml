@@ -175,6 +175,26 @@ defaults:
       path: "assets/**/*.*"
     values:
       sitemap: false
+  - scope:
+      path: "_posts/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "_pages/tag*"
+    values:
+      sitemap: false
+  - scope:
+      path: "_news/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "_projects/lr0_automa_generator*"
+    values:
+      sitemap: false
+  - scope:
+      path: "_projects/standalone_stellar_blockchain*"
+    values:
+      sitemap: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
