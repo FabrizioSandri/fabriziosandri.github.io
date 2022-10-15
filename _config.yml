@@ -176,10 +176,6 @@ defaults:
     values:
       sitemap: false
   - scope:
-      path: "_posts/*"
-    values:
-      sitemap: false
-  - scope:
       path: "_pages/tag*"
     values:
       sitemap: false
@@ -220,7 +216,7 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
-display_tags: ['GSOC Summary', 'RcppDeepState', 'GitHub Action', 'DeepState', 'Rcpp', 'Valgrind'] # this tags will be dispalyed on the front page of your blog
+display_tags: ['Google Summer of Code', 'RcppDeepState', 'GitHub Action', 'DeepState', 'Rcpp', 'Valgrind'] # this tags will be dispalyed on the front page of your blog
 
 
 # -----------------------------------------------------------------------------
