@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Description of the steps that I will follow this week to improve the GitHub action's execution time
 badges: true
-tags: [GitHub Action]
+tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: GitHub action's execution time
 ---

@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: An introduction to GitHub Actions and some consideration before writing the GitHub Action for RcppDeepState
 badges: true
-tags: [GitHub Action]
+tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: RcppDeepState's GitHub Action considerations 
 ---

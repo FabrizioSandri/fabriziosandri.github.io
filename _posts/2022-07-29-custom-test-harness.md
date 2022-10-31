@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Guide to write a custom test harness for a function that cannot be analyzed because of some datatypes falling outside of the supported ones.
 badges: true
-tags: [RcppDeepState]
+tags: [Google Summer of Code, RcppDeepState]
 comments: false
 title: Write a custom test harness for functions with unsupported datatypes
 ---

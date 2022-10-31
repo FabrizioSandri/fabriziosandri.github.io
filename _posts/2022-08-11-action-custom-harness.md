@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Guide to provide RcppDeepState-action a custom test harness for a function that cannot be analyzed.
 badges: true
-tags: [RcppDeepState, GitHub Action]
+tags: [Google Summer of Code, RcppDeepState, GitHub Action]
 comments: false
 title: Provide a custom test harness to RcppDeepState GitHub Action
 ---

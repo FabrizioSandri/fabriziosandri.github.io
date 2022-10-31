@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: A quick introduction to DeepState fuzzing library 
 badges: true
-tags: [DeepState]
+tags: [Google Summer of Code, DeepState]
 comments: false
 title: DeepState introduction
 ---

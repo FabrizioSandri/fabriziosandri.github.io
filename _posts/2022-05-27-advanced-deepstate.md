@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: An advanced fuzz testing description using DeepState in conjunction with Valgrind
 badges: true
-tags: [DeepState, Valgrind]
+tags: [Google Summer of Code, DeepState, Valgrind]
 comments: false
 title: Advanced fuzz testing with DeepState and Valgrind
 ---

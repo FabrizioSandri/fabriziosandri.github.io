@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Considerations review
 badges: true
-tags: [GitHub Action]
+tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Moving to a composite GitHub Action
 ---

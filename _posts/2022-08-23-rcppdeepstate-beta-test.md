@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: RcppDeepState-action beta test on other packages
 badges: true
-tags: [GitHub Action]
+tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Beta test RcppDeepState-action on GitHub hosted CRAN packages 
 ---

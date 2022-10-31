@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: An introduction to Rcpp fuzz testing using RcppDeepState auxiliary functions
 badges: true
-tags: [RcppDeepState]
+tags: [Google Summer of Code, RcppDeepState]
 comments: false
 title: Introduction to RcppDeepState
 ---

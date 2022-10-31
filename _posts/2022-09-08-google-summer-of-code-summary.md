@@ -23,90 +23,170 @@ In accordance with the [goal of my project](https://github.com/rstats-gsoc/gsoc2
 All of my progress on the two aforementioned repositories is documented in the pull requests and issues listed underneath. Furthermore, the week summaries that I posted at the end of each week give a more detailed explanation of the changes that I made week by week; you can find them [here](https://fabriziosandri.github.io/gsoc-2022-blog/).
 
 ##### FabrizioSandri/RcppDeepState-action 
-<table class="recap-table">
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+      <th>Pull requests</th>
+      <th>Issues</th>
+    </tr>
+  </thead>
   <tr>
-    <th>Pull requests</th>
-    <th>Issues</th>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/1">#1 First prototype</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/2">#2 Segmentation fault not catched</a></td>
   </tr>
   <tr>
-    <td class="recap-table-cell recap-left-cell">
-      <ul>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/1">#1 First prototype</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/2">#2 Exit codes</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/3">#3 Input arguments</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/4">#4 Composite action</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/6">#6 Action&#39;s comments</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/7">#7 Action&#39;s comments - 2</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/8">#8 Additional arguments and documentation</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/9">#9 Docker hub integration</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/10">#10 Report size exceeds the maximum GitHub comment size</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/12">#12 Docker Hub tags problem</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/15">#15 Report details</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/17">#17 Get errors count</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/18">#18 Parameters names/values</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/20">#20 Dependencies issue</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/21">#21 Action logs enhancement</a></li>
-      </ul>
-    </td>  
-    <td class="recap-table-cell">
-      <ul>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/2">#2 Segmentation fault not catched</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/4">#4 Fuzzing functions with Rcpp parameters</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/7">#7 Valgrind for initial pass</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/8">#8 RcppDeepState optimization options</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/10">#10 Missing Rcpp Strings support</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/13">#13 Wrong inputs column</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/18">#18 Valgrind and Clang-14 dwarf support</a></li>
-      </ul>
-    </td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/2">#2 Exit codes</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/4">#4 Fuzzing functions with Rcpp parameters</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/3">#3 Input arguments</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/7">#7 Valgrind for initial pass</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/4">#4 Composite action</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/8">#8 RcppDeepState optimization options</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/6">#6 Action&#39;s comments</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/10">#10 Missing Rcpp Strings support</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/7">#7 Action&#39;s comments - 2</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/13">#13 Wrong inputs column</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/8">#8 Additional arguments and documentation</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/issues/18">#18 Valgrind and Clang-14 dwarf support</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/9">#9 Docker hub integration</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/10">#10 Report size exceeds the maximum GitHub comment size</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/12">#12 Docker Hub tags problem</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/15">#15 Report details</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/17">#17 Get errors count</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/18">#18 Parameters names/values</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/20">#20 Dependencies issue</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/pull/21">#21 Action logs enhancement</a></td>
+    <td></td>
+  </tr>
+
+
+
 </table>
 
 
 ##### FabrizioSandri/RcppDeepState 
 
 
-<table class="recap-table">
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+      <th>Pull requests</th>
+      <th>Issues</th>
+    </tr>
+  </thead>
   <tr>
-    <th>Pull requests</th>
-    <th>Issues</th>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/1">#1 Makefile generation fix and improvements</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/5">#5 what to do when auto comments are too large?</a></td>
   </tr>
   <tr>
-    <td class="recap-table-cell recap-left-cell">
-      <ul>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/1">#1 Makefile generation fix and improvements</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/3">#3 Override default Makevars</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/5">#5 Harness creation improvements</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/6">#6 Debug symbols tests</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/9">#9 Logging improvements</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/11">#11 Rcpp string support</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/12">#12 Fuzz only supported functions</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/14">#14 qs::c_qsave moved to the runner</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/15">#15 Automatically setup CI</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/16">#16 Harness creation improvements - 2</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/17">#17 Custom test harness</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/19">#19 Harness unit test name</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/20">#20 Editable functions</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/21">#21 Harness unit test name - 2</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/22">#22 Exit status codes</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/23">#23 Harness creation improvements - 3</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/24">#24 Makevars issue</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/25">#25 Dependencies problem</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/26">#26 IntegerMatrix support</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/27">#27 Dependencies issue</a></li>
-      </ul>
-    </td>  
-    <td class="recap-table-cell">
-      <ul>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/5">#5 what to do when auto comments are too large?</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/11">#11 Docker Hub integration trigger event</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/13">#13 SHA in PR comment?</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/14">#14 beta test on other packages?</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/16">#16 parameter names / value?</a></li>
-      <li><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/19">#19 Not finding source files from DESCRIPTION LinkingTo: field?</a></li>
-      </ul>
-    </td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/3">#3 Override default Makevars</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/11">#11 Docker Hub integration trigger event</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/5">#5 Harness creation improvements</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/13">#13 SHA in PR comment?</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/6">#6 Debug symbols tests</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/14">#14 beta test on other packages?</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/9">#9 Logging improvements</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/16">#16 parameter names / value?</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/11">#11 Rcpp string support</a></td>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState-action/issues/19">#19 Not finding source files from DESCRIPTION LinkingTo: field?</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/12">#12 Fuzz only supported functions</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/14">#14 qs::c_qsave moved to the runner</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/15">#15 Automatically setup CI</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/16">#16 Harness creation improvements - 2</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/17">#17 Custom test harness</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/19">#19 Harness unit test name</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/20">#20 Editable functions</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/21">#21 Harness unit test name - 2</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/22">#22 Exit status codes</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/23">#23 Harness creation improvements - 3</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/24">#24 Makevars issue</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/25">#25 Dependencies problem</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/26">#26 IntegerMatrix support</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FabrizioSandri/RcppDeepState/pull/27">#27 Dependencies issue</a></td>
+    <td></td>
+  </tr>
+
 </table>
 
 ## Future work

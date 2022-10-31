@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: The results of beta testing RcppDeepState-action 
 badges: true
-tags: [GitHub Action]
+tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Beta testing results
 ---

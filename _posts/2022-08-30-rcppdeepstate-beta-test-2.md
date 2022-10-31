@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Solution for the problem that prevents the action from being run in remote pull requests. 
 badges: true
-tags: [GitHub Action]
+tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Issue with RcppDeepState-action beta test 
 ---
