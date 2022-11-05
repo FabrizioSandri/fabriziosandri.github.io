@@ -22,4 +22,5 @@ During my time at the University of Trento, I actively contributed to many open 
 
 I participated in the [Google Summer of Code 2022](https://summerofcode.withgoogle.com/programs/2022/projects/t87xbcg2) as a software developer for the [R project for statistical computing](https://www.r-project.org/) to integrate the [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState) library with GitHub Actions - [RcppDeepState-action](https://github.com/marketplace/actions/rcppdeepstate).
 
+As part of the [Google Award for Inclusion](https://research.google/outreach/air-program/), I mentored four students in the Diversity, Equity, and Inclusion for Technology and Information Professionals (DEI-TIP) course at the University of Tennessee, Knoxville. I supported the students in learning about and integrating into the Open Source Software Community.
 
