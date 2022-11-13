@@ -6,7 +6,7 @@ subtitle: <h5>Computer Science student - <a href="https://www.unitn.it/">Univers
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   image_cicular: false # crops the image to make it circular
   address: <a href="mailto:sandri.fabr@gmail.com">sandri.fabr@gmail.com</a><br/>Trento, Italy
 
