@@ -31,6 +31,16 @@
 - title: Experience
   type: time_table
   contents:
+
+    - title: Open Source mentor
+      institution: University of Tennessee
+      year: 2022
+      description:
+        <ul>
+          <li>As part of the Google Award for Inclusion, I am mentoring four students in the course of Diversity, Equity, and Inclusion for Technology and Information Professionals (DEI-TIP).;</li>
+          <li>I supported the students in learning about and integrating into the Open Source Software Community.</li>
+        </ul>
+
     - title: Google Summer of Code
       institution: R project for statistical computing
       year: 2022
