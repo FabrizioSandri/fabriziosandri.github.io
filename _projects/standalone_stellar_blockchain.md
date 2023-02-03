@@ -3,7 +3,7 @@ layout: page
 title: Standalone Stellar Blockchain
 description: A ready-to-use setup of a standalone Stellar blockchain based on Docker.
 img: /assets/img/standalone-stellar-blockchain.png
-importance: 2
+importance: 4
 additional: https://github.com/FabrizioSandri/Standalone-stellar-blockchain
 start: 2022
 end: 2022
