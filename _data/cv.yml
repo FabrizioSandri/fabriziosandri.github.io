@@ -32,45 +32,37 @@
   type: time_table
   contents:
 
-    - title: Open Source mentor
+    - title: Google Award for Inclusion
       institution: University of Tennessee
       year: 2022
       description:
         <ul>
-          <li>As part of the Google Award for Inclusion, I am mentoring four students in the course of Diversity, Equity, and Inclusion for Technology and Information Professionals (DEI-TIP).;</li>
-          <li>I supported the students in learning about and integrating into the Open Source Software Community.</li>
+          <li>As part of the Google Award for Inclusion, I mentored four students in the Diversity, Equity, and Inclusion for Technology and Information Professionals (DEI-TIP) course at the University of Tennessee, Knoxville</li>
+          <li>As a mentor, I helped the students in their learning and integration into the Open Source Software Community</li>
         </ul>
 
     - title: Google Summer of Code
       institution: R project for statistical computing
       year: 2022
       description: |
-        Participating in the GSOC 2022 as a contributor to build a sophisticated continuous integration GitHub Action for non deterministic fuzzing using RcppDeepState
+        Participated in the GSOC 2022 as a contributor to build a continuous integration GitHub Action for non deterministic fuzzing using RcppDeepState
         <ul>
-          <li>Develop a GitHub action for the RcppDeepState fuzzing library</li>
-          <li>Improve the RcppDeepState library for a future publication on CRAN</li>
+          <li>Built a GitHub Action for non deterministic fuzz testing with RcppDeepState.</li>
+          <li>Reduced the time necessary to setup and run RcppDeepstate from more than 30 minutes to less than 1 minute.</li>
+          <li>Improved the code quality of RcppDeepState, and fixed 20+ bugs of the library.</li>
         </ul>
         
-        <p class="ml-1 ml-md-4"><a href="https://fabriziosandri.github.io/gsoc-2022-blog">Link to my GSOC blog</a></p>
+        <p class="ml-4 mt-3 "><a href="https://fabriziosandri.github.io/gsoc-2022-blog">See my blog</a></p>
 
-    - title: Business Management software
+    - title: Sidera Software Intern
       institution: Sidera Software
       year: 2020
       description:
         <ul>
-          <li>Vaadin framework to build the Web app for a Java back-end;</li>
-          <li>Creation of a fully compliant RESTful API from scratch;</li>
-          <li>Development of a new logging system to improve the time needed for developers to figure out errors motivation.</li>
+          <li>Created a fully compliant RESTful API from scratch</li>
+          <li>Developed a new logging system to improve the time needed for developers to figure out errors motivation</li>
         </ul>
         
-    - title: Web developing
-      institution: Sidera Software
-      year: 2018
-      description:
-        <ul>
-          <li>Designed a new responsive Website front-end to manage a food company business;</li>
-          <li>Usage of Web frameworks to improve Websites responsiveness.</li>
-        </ul>
 
 
 - title: Open Source Projects
