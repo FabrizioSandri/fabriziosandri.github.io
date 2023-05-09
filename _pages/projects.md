@@ -84,14 +84,6 @@ This is a list of the packages that RcppDeepState-action automatically checks:
 
 # Coursework
 
-#### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
-- A ready-to-use setup of a standalone [Stellar
-  blockchain](https://stellar.org/) based on Docker that I implemented as part
-  of my thesis study.
-- Docker-compose implementation of a Stellar validator node that runs on a fully
-  private blockchain, separated from the “public” and “test” one.
-
-
 #### [Hybrid recommendation system](https://github.com/FabrizioSandri/data-mining-project)
 Implementation of an advanced recommendation system for the ”Data Mining” course
 at University of Trento.
@@ -99,6 +91,13 @@ at University of Trento.
 - Developed a hybrid recommendation system combining content-based,
   collaborative filtering, and LSH to optimize query suggestions in a database
   management system using Python.
+
+#### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
+- A ready-to-use setup of a standalone [Stellar
+  blockchain](https://stellar.org/) based on Docker that I implemented as part
+  of my thesis study.
+- Docker-compose implementation of a Stellar validator node that runs on a fully
+  private blockchain, separated from the “public” and “test” one.
 
 #### [LR(0) automata generator](https://github.com/FabrizioSandri/LR-0-automa-generator)
 Parsing automa generator written in C++ created as final project for the ”Formal
