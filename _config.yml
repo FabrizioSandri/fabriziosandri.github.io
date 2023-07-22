@@ -99,7 +99,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: Fabrizio's Blog # blog_name will be displayed in your blog page
 blog_nav_title: Blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: Google Summer of Code 2022
+blog_description: 
 permalink: /blog/:year/:title/
 
 
@@ -157,7 +157,6 @@ keep_files:
 # Plug-ins
 plugins:
   - jekyll-archives
-  - jekyll-diagrams
   - jekyll-email-protect
   - jekyll-feed
   - jekyll-imagemagick
@@ -167,6 +166,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-target-blank
   - jekyll-twitter-plugin
+  - jekyll-jupyter-notebook
+  - jekyll-toc
   - jemoji
 
 # Sitemap settings
@@ -238,14 +239,6 @@ imagemagick:
     - ".tiff"
   output_formats:
     webp: "-resize 800x"
-
-# -----------------------------------------------------------------------------
-# Jekyll Diagrams
-# -----------------------------------------------------------------------------
-
-jekyll-diagrams:
-    # configuration, see https://github.com/zhustec/jekyll-diagrams.
-    # feel free to comment out this section if not using jekyll diagrams.
 
 
 # -----------------------------------------------------------------------------

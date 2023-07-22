@@ -69,6 +69,8 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-imagemagick (1.4.0)
       jekyll (>= 3.4)
+    jekyll-jupyter-notebook (0.0.5)
+      jekyll
     jekyll-minifier (0.1.10)
       cssminify2 (~> 2.0)
       htmlcompressor (~> 0.4)
@@ -89,6 +91,9 @@ GEM
     jekyll-target-blank (2.0.0)
       jekyll (>= 3.0, < 5.0)
       nokogiri (~> 1.10)
+    jekyll-toc (0.18.0)
+      jekyll (>= 3.9)
+      nokogiri (~> 1.12)
     jekyll-twitter-plugin (2.1.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
@@ -158,11 +163,13 @@ DEPENDENCIES
   jekyll-email-protect
   jekyll-feed
   jekyll-imagemagick
+  jekyll-jupyter-notebook
   jekyll-minifier
   jekyll-paginate-v2
   jekyll-scholar
   jekyll-sitemap
   jekyll-target-blank
+  jekyll-toc
   jekyll-twitter-plugin
   jemoji
   mini_racer
