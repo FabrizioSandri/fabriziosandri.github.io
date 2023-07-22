@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-description: Particle swarm optimization visualization
+description: Visualization of particle swarm optimization(PSO) in action.
 badges: true
 tags: [Optimization]
 comments: false
