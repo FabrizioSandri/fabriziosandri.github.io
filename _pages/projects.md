@@ -2,11 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: A list of projects that I was involved throughout the years.
+description: List of projects I've been actively engaged in over the years.
 nav: true
 nav_order: 2
 ---
-
 
 #### [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState)
 RcppDeepState is an R library to fuzz test compiled code in Rcpp packages. The

@@ -50,8 +50,6 @@ footer_fixed: false
 # Dimensions
 max_width: 800px
 
-# TODO: add layout settings (single page vs. multi-page)
-
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
@@ -184,14 +182,6 @@ defaults:
       path: "_news/*"
     values:
       sitemap: false
-  - scope:
-      path: "_projects/lr0_automa_generator*"
-    values:
-      sitemap: false
-  - scope:
-      path: "_projects/standalone_stellar_blockchain*"
-    values:
-      sitemap: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
@@ -216,8 +206,6 @@ jekyll-archives:
     year: '/blog/:year/'
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
-
-display_tags: ['Google Summer of Code', 'RcppDeepState', 'GitHub Action', 'DeepState', 'Rcpp', 'Valgrind'] # this tags will be dispalyed on the front page of your blog
 
 
 # -----------------------------------------------------------------------------
