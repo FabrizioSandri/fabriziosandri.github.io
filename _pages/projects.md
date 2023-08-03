@@ -83,18 +83,27 @@ This is a list of the packages that RcppDeepState-action automatically checks:
 
 # Coursework
 
+#### [CLIP Region Proposal Network](https://github.com/FabrizioSandri/deep-learning-project)
+Visual grounding framework written using PyTorch employing CLIP as the
+foundation. This framework was created as a project for the Deep Learning course
+at the University of Trento.
+
+- Applied transfer learning using OpenAI CLIP and constructed a Region Proposal
+  Network on its foundation. This allowed to leverage the pretrained
+  convolutions of CLIP ResNet for extracting region proposals from images.
+
 #### [Hybrid recommendation system](https://github.com/FabrizioSandri/data-mining-project)
 Implementation of an advanced recommendation system for the ”Data Mining” course
 at University of Trento.
 
 - Developed a hybrid recommendation system combining content-based,
-  collaborative filtering, and LSH to optimize query suggestions in a database
-  management system using Python.
+  collaborative filtering, and Locality sensitive hashing to optimize query
+  suggestions in a database management system using Python.
 
 #### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
-- A ready-to-use setup of a standalone [Stellar
-  blockchain](https://stellar.org/) based on Docker that I implemented as part
-  of my thesis study.
+A ready-to-use setup of a standalone [Stellar blockchain](https://stellar.org/)
+based on Docker that I implemented as part of my thesis study.
+
 - Docker-compose implementation of a Stellar validator node that runs on a fully
   private blockchain, separated from the “public” and “test” one.
 
