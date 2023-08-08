@@ -16,7 +16,8 @@ more subtle bugs like memory leaks or even more general memory errors.
 - Reduced the time necessary to setup and run RcppDeepstate from more than 30
   minutes to less than 1 minute. This improvement makes it possible for
   RcppDeepState-action to operate quickly inside the runner.
-- Improved the code quality of RcppDeepState and fixed 20+ bugs of the library.
+- Enhanced code quality of RcppDeepState and resolved over 20 bugs in the
+  library.
 - [See my blog](https://fabriziosandri.github.io/gsoc-2022-blog)
 
 #### [RcppDeepState-action](https://github.com/FabrizioSandri/RcppDeepState-action)
@@ -46,28 +47,28 @@ systems. [Merged into DeepState in
 2023](https://github.com/trailofbits/deepstate/pull/428)
 
 #### [NASA FPrime](https://github.com/nasa/fprime)
-- I fixed a potential overflow issue with overlapping strings in memory.
-[Merged into FPrime in 2021](https://github.com/nasa/fprime/pull/1164)
-
-- Improved the code quality and reviewed some framework utilities with a
-  particular emphasis on effective `snprintf` usage. [Merged into FPrime in
+- Resolved potential overflow issue arising from overlapping strings in memory
+during copying operations. [Merged into FPrime in
+2021](https://github.com/nasa/fprime/pull/1164)
+- Improved code quality and conducted reviews of string manipulation framework
+  utilities. [Merged into FPrime in
   2021](https://github.com/nasa/fprime/pull/1151)
 
 #### [Italian digital public services](https://github.com/italia/daf-recipes)
-- I developed, with my team, a Docker based system to aggregate and monitor
-  large data. 
+- Led team effort to devise a Docker-based system for aggregating and monitoring
+  vast data sets.
 - Integrated 4 services with Docker-compose reducing to few seconds the time
   needed to aggregate and visualize data. [Merged into daf-recipes in
   2017](https://github.com/italia/daf-recipes/commits?author=FabrizioSandri)
 
 
 #### R and statistical software community contribution
-I integrated RcppDeepState-action to packages accessible on CRAN and GitHub,
-allowing to detect and report memory issues in those packages. By using GitHub
-Actions' continuous integration system, developers can automatically check their
-R packages for memory problems without having to bother about setting up fuzzers
-and other memory detection tools. 
-
+I incorporated RcppDeepState functionality into packages that can be accessed on
+both CRAN and GitHub. This enables the identification and reporting of
+memory-related problems within these packages. Through GitHub Actions'
+continuous integration system, developers can effortlessly assess their R
+packages for memory-related issues, eliminating the need to manually configure
+fuzzers and other memory detection utilities.
 
 This is a list of the packages that RcppDeepState-action automatically checks:
 
