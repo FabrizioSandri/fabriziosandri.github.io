@@ -1,0 +1,781 @@
+---
+layout: default
+title: Weather Revò
+---
+
+<!DOCTYPE html>
+<html>
+    <head>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel= "stylesheet" type= "text/css" href= "weather.css">
+
+        <script src="gauge.min.js" ></script>
+        
+        <script>
+
+            function getBindings() {
+              $.getJSON('/weather/forecast.json', function(data) {
+                forecastBindings = data;
+              });
+            }
+            
+            function generateYearsOptions(){
+                var optionYearRain = document.getElementById("rainyear");
+
+                var currentYear = new Date().getFullYear();
+                var startYear = 2021;
+
+                var years = [];
+                while (startYear <= currentYear){
+                    years.push(startYear++);
+                }
+
+                years.forEach((year) => {
+                    let optionYear = document.createElement("option");
+                    optionYear.setAttribute("value", "" + year);
+                    optionYear.innerText = year;
+                    if(year == currentYear){
+                        optionYear.setAttribute("selected", "selected")
+                    }
+                    optionYearRain.appendChild(optionYear);
+                });
+
+            }
+
+            function createMonthRainMeter() {
+                let months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre ", "dicembre"];
+                let rain_meter_container = document.getElementById("rain_meter_container");
+                rain_meter_container.innerHTML = '';
+                
+                let selected_year = document.getElementById("rainyear").value
+
+                for (let i=0; i<12; i++) {
+                    let label = months[i];
+                    let id = months[i] + "_totalrain"
+                    
+                    // prepare the canvas 
+                    let canvas = document.createElement("canvas");
+
+                    canvas.setAttribute("id", id);
+                    canvas.setAttribute("data-type", "linear-gauge");
+                    canvas.setAttribute("data-value", "0");
+                    canvas.setAttribute("data-title", label);
+                    canvas.setAttribute("data-units", "cm");
+                    canvas.setAttribute("data-width", "80");
+                    canvas.setAttribute("data-height", "300");
+                    canvas.setAttribute("data-min-value", "0");
+                    canvas.setAttribute("data-max-value", "10");
+                    canvas.setAttribute("data-major-ticks", "0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10");
+                    canvas.setAttribute("data-minor-ticks", "5");
+                    canvas.setAttribute("data-stroke-ticks", "true");
+                    canvas.setAttribute("data-border-shadow-width", "0");
+                    canvas.setAttribute("data-borders", "false");
+                    canvas.setAttribute("data-bar-begin-circle", "false");
+                    canvas.setAttribute("data-tick-side", "left");
+                    canvas.setAttribute("data-number-side", "left");
+                    canvas.setAttribute("data-needle-side", "left");
+                    canvas.setAttribute("data-needle-type", "line");
+                    canvas.setAttribute("data-needle-width", "3");
+                    canvas.setAttribute("data-color-needle", "rgba(255, 50, 50, 0.9)");
+                    canvas.setAttribute("data-color-needle-end", "rgba(255, 50, 50, 0.9)");
+                    canvas.setAttribute("data-color-needle-shadow-up", "rgba(255, 50, 50, 0)");
+                    canvas.setAttribute("data-color-needle-shadow-down", "rgba(255, 50, 50, 0)");
+                    canvas.setAttribute("data-needle-end", "150");
+                    canvas.setAttribute("data-color-bar-progress", "#327ac0");
+
+                    canvas.setAttribute("data-highlights", "[]");
+                    canvas.setAttribute("data-value-dec", "1");
+                    canvas.setAttribute("data-value-int", "0");
+                    canvas.setAttribute("data-value-box-stroke", "1");
+                    canvas.setAttribute("data-value-text-shadow", "0");
+                    canvas.setAttribute("data-font-value-size", "40");
+                    canvas.setAttribute("data-color-value-box-shadow", "0");
+                    canvas.setAttribute("data-color-value-box-background", "rgba(226, 226, 226, 0.3)");
+
+                    canvas.setAttribute("data-font-units-weight", "bolder");
+                    canvas.setAttribute("data-font-title-weight", "bolder");
+                    canvas.setAttribute("data-font-value-weight", "bold");
+                    canvas.setAttribute("data-font-numbers-weight", "bold");
+                    canvas.setAttribute("data-font-numbers-size", "30");
+                    canvas.setAttribute("data-font-title-size", "40");
+                    canvas.setAttribute("data-font-units-size", "40");
+
+                    canvas.setAttribute("data-bar-width", "30");
+                    canvas.setAttribute("data-ticks-width", "40");
+                    canvas.setAttribute("data-ticks-width-minor", "15");
+
+                    rain_meter_container.appendChild(canvas);
+                    
+                    let m = `${i+1}`;
+                    if (i < 9){
+                      m = `0${i+1}`;
+                    }
+                    getMonthRain(selected_year, m, months[i] + "_totalrain");
+
+
+                }
+                
+            }
+
+            // get forecast for today
+            function getForecast() {
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200){
+                        
+                        let result = JSON.parse(this.responseText);
+
+                        let forecast_icon = result["forecastIcon"];
+                        forecast_icon = forecastBindings["forecastIcon"][forecast_icon];
+                        let forecast_rule = result["forecastRule"];
+                        forecast_rule = forecastBindings["forecastRule"][forecast_rule];
+                        let outTemp = parseFloat(result["outTemp"]).toFixed(1);
+                        let appTemp = parseFloat(result["appTemp"]).toFixed(1);
+                        let dewpoint = parseFloat(result["dewpoint"]).toFixed(1);
+                        let inTemp = parseFloat(result["inTemp"]).toFixed(1);
+                        let windDir = parseInt(result["windDir"]);
+                        let windSpeed = parseFloat(result["windSpeed"]).toFixed(2);
+                        let windGust = parseFloat(result["windGust"]).toFixed(2);
+                        let windSpeed10 = parseFloat(result["windSpeed10"]).toFixed(2);
+                        let windchill = parseFloat(result["windchill"]).toFixed(1);
+                        let barometer = parseFloat(result["barometer"]).toFixed(2);
+                        let altimeter = parseFloat(result["altimeter"]).toFixed(2);
+                        let pressure = parseFloat(result["pressure"]).toFixed(2);
+                        let outHumidity = parseInt(result["outHumidity"]);
+                        let heatIndex = parseFloat(result["heatindex"]).toFixed(1);
+                        let humIdex = parseFloat(result["humidex"]).toFixed(1);
+                        let cloudbase = parseInt(result["cloudbase"]);
+                        
+                        let sunrise = result["sunrise"];
+                        let sunset = result["sunset"];
+
+                        let sunriseDate = new Date(sunrise * 1000);
+                        sunrise = sunriseDate.toLocaleTimeString("it-IT", {hour: '2-digit', minute:'2-digit'})
+                        let sunsetDate = new Date(sunset * 1000);
+                        sunset = sunsetDate.toLocaleTimeString("it-IT", {hour: '2-digit', minute:'2-digit'})
+
+                        let dayRain = parseFloat(result["dayRain"]).toFixed(1);
+                        let monthRain = parseFloat(result["monthRain"]).toFixed(1);
+                        let yearRain = parseFloat(result["yearRain"]).toFixed(1);
+
+
+                        // handle rain overflows
+                        if (dayRain >= 1){
+                            let maxRain = Math.ceil(dayRain);
+                            document.getElementById("dayRain").setAttribute("data-max-value", maxRain);    
+                            let evenlySpaced = [];
+                            for (let i = 0; i <= 10; i++) {
+                                evenlySpaced.push(Math.round(i * 0.1 * maxRain * 100) / 100);
+                            }
+                            document.getElementById("dayRain").setAttribute("data-major-ticks", evenlySpaced.join(", "));    
+                        }
+
+                        if (monthRain >= 10){
+                            let maxRain = Math.ceil(monthRain / 10) * 10;
+                            document.getElementById("monthRain").setAttribute("data-max-value", maxRain);    
+                            let evenlySpaced = [];
+                            for (let i = 0; i <= 10; i++) {
+                                evenlySpaced.push(Math.round(i * 0.1 * maxRain * 100) / 100);
+                            }
+                            document.getElementById("monthRain").setAttribute("data-major-ticks", evenlySpaced.join(", "));    
+                        }
+
+                        if (yearRain >= 100){
+                            let maxRain = Math.ceil(yearRain / 100) * 100;
+                            document.getElementById("yearRain").setAttribute("data-max-value", maxRain);    
+                            let evenlySpaced = [];
+                            for (let i = 0; i <= 10; i++) {
+                                evenlySpaced.push(Math.round(i * 0.1 * maxRain * 100) / 100);
+                            }
+                            document.getElementById("yearRain").setAttribute("data-major-ticks", evenlySpaced.join(", "));    
+                        }
+
+                        document.getElementById("forecasticon").setAttribute("src", "/weather/weathericons/" + forecast_icon);
+                        document.getElementById("forecastrule").innerText = forecast_rule;
+                        document.getElementById("outTemp").setAttribute("data-value", outTemp);
+                        document.getElementById("appTemp").innerText = appTemp;
+                        document.getElementById("dewpoint").innerText = dewpoint;
+                        document.getElementById("windSpeed").setAttribute("data-value", windSpeed);
+                        document.getElementById("windGust").innerText = windGust;
+                        document.getElementById("windSpeed10").innerText = windSpeed10;
+                        document.getElementById("windchill").innerText = windchill;
+                        if (windDir){
+                            document.getElementById("windDir").setAttribute("data-needle", true);
+                            document.getElementById("windDir").setAttribute("data-value", windDir);
+                        }else{
+                            document.getElementById("windDir").setAttribute("data-needle", false);
+                        }
+                        document.getElementById("barometer").setAttribute("data-value", barometer);
+                        document.getElementById("altimeter").innerText = altimeter;
+                        document.getElementById("pressure").innerText = pressure;
+                        document.getElementById("outHumidity").setAttribute("data-value", outHumidity);
+                        document.getElementById("heatIndex").innerText = heatIndex;
+                        document.getElementById("humIdex").innerText = humIdex;
+                        document.getElementById("sunrise").innerText = sunrise;
+                        document.getElementById("sunset").innerText = sunset;
+                        document.getElementById("cloudbase").setAttribute("data-value", cloudbase);
+                        document.getElementById("dayRain").setAttribute("data-value", dayRain);                        
+                        document.getElementById("monthRain").setAttribute("data-value", monthRain);                        
+                        document.getElementById("yearRain").setAttribute("data-value", yearRain);                        
+
+                    }
+                }
+
+                xhttp.open("GET", "http://sandri.soon.it:8080", true);
+                xhttp.send();
+            }
+
+            function getMonthRain(year, month, meterId){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200){
+                        let weather_data = JSON.parse(this.responseText);
+                        let monthRain = weather_data["historyRain"][parseInt(year)][parseInt(month)];
+
+                        if (monthRain >= 10){
+                            let maxRain = Math.ceil(monthRain / 10) * 10;
+                            document.getElementById(meterId).setAttribute("data-max-value", maxRain);    
+                            let evenlySpaced = [];
+                            for (let i = 0; i <= 10; i++) {
+                                evenlySpaced.push(Math.round(i * 0.1 * maxRain * 100) / 100);
+                            }
+                            document.getElementById(meterId).setAttribute("data-major-ticks", evenlySpaced.join(", "));    
+                        }
+
+                        document.getElementById(meterId).setAttribute("data-value", monthRain)
+                    }
+                }
+
+                xhttp.open("GET", "http://sandri.soon.it:8080", true);
+                xhttp.send();
+            }
+        </script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    
+    </head>
+    <body>
+        <!-- Page content -->
+        <div class="container maincontainer">
+            
+            <div class="row">
+                <div class="col">
+                    <h2>Meteo Revò</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col">
+                            <canvas id="outTemp" data-type="radial-gauge"
+                                data-value="-20"
+                                data-title="Temperatura"
+                                data-units="°C"
+                                data-major-ticks="-20,-10,0,10,20,30,40,50"
+                                data-min-value="-20"
+                                data-max-value="50"
+            
+                                data-value-dec="1"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="30"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+
+                                data-font-units-weight="bold"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-color-title="rgba(34, 34, 34, 0.8)"
+                                data-color-units="rgba(34, 34, 34, 0.8)"
+                                data-color-needle="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                                data-animation-rule="linear"
+                                
+                                data-highlights='[
+                                    {"from": -20, "to": -10, "color": "rgba(51, 174, 255, 0.8)"},
+                                    {"from": -10, "to": 0, "color": "rgba(51, 174, 255, 0.3)"},
+                                    {"from": 30, "to": 40, "color": "rgba(200, 50, 50, 0.3)"},
+                                    {"from": 40, "to": 50, "color": "rgba(200, 50, 50, 0.8)"}
+                                ]'
+                                data-needle-width="5"
+            
+                                data-width="250"
+                                data-height="250"
+                            ></canvas>
+        
+                            <p>Temperatura percepita: <span id="appTemp">-</span> °C</p>
+                            <p>Punto di rugiada: <span id="dewpoint">-</span> °C</p>
+        
+                        </div>
+                        <div class="col">
+                            <canvas id="outHumidity" data-type="radial-gauge"
+                                data-value="0"
+                                data-title="Umidità"
+                                data-units="%"
+            
+                                data-value-dec="0"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="30"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+        
+                                data-font-units-weight="bold"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-color-title="rgba(34, 34, 34, 0.8)"
+                                data-color-units="rgba(34, 34, 34, 0.8)"
+                                data-color-needle="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                                data-animation-rule="linear"
+                                
+                                data-min-value="0"
+                                data-max-value="100"
+                                data-width="250"
+                                data-height="250"
+                            ></canvas>
+                            
+                            <p>Indice di calore(HI): <span id="heatIndex">-</span> °C</p>
+                            <p>Hum idex: <span id="humIdex">-</span> °C</p>
+        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <canvas id="barometer" data-type="radial-gauge"
+                        data-value="980"
+                        data-title="Barometro"
+                        data-units="hPa"
+                        data-min-value="980"
+                        data-max-value="1050"
+    
+                        data-value-dec="1"
+                        data-value-int="0"
+                        data-value-box-stroke="1"
+                        data-value-text-shadow="0"
+                        data-font-value-size="30"
+                        data-color-value-box-shadow="0"
+                        data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+    
+                        data-font-units-weight="bold"
+                        data-font-title-weight="bolder"
+                        data-font-value-weight="bold"
+                        data-font-numbers-weight="bold"
+                        data-color-title="rgba(34, 34, 34, 0.8)"
+                        data-color-units="rgba(34, 34, 34, 0.8)"
+                        data-color-needle="rgba(255, 50, 50, 0.6)"
+                        data-color-needle-end="rgba(255, 50, 50, 0.6)"
+                        data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                        data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                        data-highlights='[
+                            {"from": 1010, "to": 1030, "color": "#ededed"},
+                            {"from": 1030, "to": 1040, "color": "#cccccc"},
+                            {"from": 1040, "to": 1050, "color": "#999999"}
+                        ]'
+                        data-animation-rule="linear"
+    
+                        data-width="250"
+                        data-height="250"
+                        data-min-value="1000"
+                        data-max-value="1100"
+    
+                        data-start-angle="90"
+                        data-ticks-angle="180"
+                        data-major-ticks="980, 990, 1000, 1010, 1020, 1030, 1040, 1050"
+                        data-minor-ticks="5"
+                        data-border-shadow-width="0"
+                        data-borders="false"
+                    ></canvas>
+                    
+                    <p>Pressure(QFE): <span id="pressure">-</span> hPa</p>
+                    <p>Altimeter(QNH): <span id="altimeter">-</span> hPa</p>
+
+                </div>
+            </div>
+            <div class="row border-top pt-2">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <canvas id="windSpeed" data-type="radial-gauge"
+                                data-value="0"
+                                data-title="Vento"
+                                data-units="km/h"
+                                data-min-value="0"
+                                data-max-value="100"
+            
+                                data-value-dec="1"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="30"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+        
+                                data-font-units-weight="bold"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-color-title="rgba(34, 34, 34, 0.8)"
+                                data-color-units="rgba(34, 34, 34, 0.8)"
+                                data-color-needle="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                                data-animation-rule="linear"
+                                
+                                data-width="250"
+                                data-height="250"
+                            ></canvas>
+        
+                            
+                            <p>Raffiche: <span id="windGust">-</span> km/h</p>
+                            <p>Media 10 min: <span id="windSpeed10">-</span> km/h</p>
+                            
+                        </div>
+                        
+        
+                        <div class="col">
+                            <canvas id="windDir" data-type="radial-gauge"
+                                data-value="0"
+                                data-width="250"
+                                data-height="250"
+                                data-type="radial-gauge"
+                                data-title="Direzione vento"
+                                data-min-value="0"
+                                data-max-value="360"
+                                data-major-ticks="N,NE,E,SE,S,SW,W,NW,N"
+                                data-minor-ticks="22"
+                                data-ticks-angle="360"
+                                data-start-angle="180"
+                                data-highlights="false"
+                                data-value-box="false"
+                                data-color-needle="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.6)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+        
+                                data-font-units-weight="bold"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-color-title="rgba(34, 34, 34, 0.8)"
+                                data-color-units="rgba(34, 34, 34, 0.8)"
+                                data-color-needle="rgba(255, 50, 50, 1)"
+                                data-animation-rule="linear"
+                                data-use-min-path="true"
+                            ></canvas>
+        
+                            
+                            <p>Temperatura percepita(vento): <span id="windchill">-</span> °C</p>
+        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="col linear">
+                            <canvas id="cloudbase" class="linear" data-type="linear-gauge"
+                                data-value="0"
+                                data-title="Nuvole"
+                                data-units="m"
+                                data-width="80"
+                                data-height="300"
+                                data-min-value="0"
+                                data-max-value="5000"
+                                data-major-ticks="0,1000,2000,3000,4000,5000"
+                                data-minor-ticks="6"
+                                data-stroke-ticks="true"
+                                data-color-plate="#fff"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-bar-begin-circle="false"
+                                data-tick-side="left"
+                                data-number-side="left"
+                                data-needle-side="left"
+                                data-needle-type="line"
+                                data-needle-width="3"
+                                data-color-needle="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+            
+                                data-value-dec="0"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="40"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+                        
+                                data-font-units-weight="bolder"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-font-numbers-size="30"
+                                data-font-title-size="40"
+                                data-font-units-size="40"
+
+                                data-bar-width="5"
+                                data-ticks-width="30"
+                                data-ticks-width-minor="15"
+                            ></canvas>
+                        </div>
+        
+                        <div class="col linear">
+                            <canvas id="dayRain" class="linear" data-type="linear-gauge"
+                                data-value="0"
+                                data-title="Giorno"
+                                data-units="cm"
+                                data-width="80"
+                                data-height="300"
+                                data-min-value="0"
+                                data-max-value="1"
+                                data-major-ticks="0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1"
+                                data-minor-ticks="5"
+                                data-stroke-ticks="true"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-bar-begin-circle="false"
+                                data-tick-side="left"
+                                data-number-side="left"
+                                data-needle-side="left"
+                                data-needle-type="line"
+                                data-needle-width="3"
+                                data-color-needle="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                                data-needle-end="150"
+                                data-color-bar-progress="#327ac0"
+                                
+                                data-value-dec="1"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="40"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+
+                                data-font-units-weight="bolder"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-font-numbers-size="30"
+                                data-font-title-size="40"
+                                data-font-units-size="40"
+
+                                data-bar-width="30"
+                                data-ticks-width="40"
+                                data-ticks-width-minor="15"
+                            ></canvas>
+                        </div>
+
+                        <div class="col linear">
+                            <canvas id="monthRain" class="linear" data-type="linear-gauge"
+                                data-value="0"
+                                data-title="Mese"
+                                data-units="cm"
+                                data-width="80"
+                                data-height="300"
+                                data-min-value="0"
+                                data-max-value="10"
+                                data-major-ticks="0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
+                                data-minor-ticks="5"
+                                data-stroke-ticks="true"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-bar-begin-circle="false"
+                                data-tick-side="left"
+                                data-number-side="left"
+                                data-needle-side="left"
+                                data-needle-type="line"
+                                data-needle-width="3"
+                                data-color-needle="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                                data-needle-end="150"
+                                data-color-bar-progress="#327ac0"
+                                
+                                data-highlights='[]'
+                                data-value-dec="1"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="40"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+        
+                                data-font-units-weight="bolder"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-font-numbers-size="30"
+                                data-font-title-size="40"
+                                data-font-units-size="40"
+
+                                data-bar-width="30"
+                                data-ticks-width="40"
+                                data-ticks-width-minor="15"
+                            ></canvas>
+                        </div>
+
+                        <div class="col linear">
+                            <canvas id="yearRain" class="linear" data-type="linear-gauge"
+                                data-value="0"
+                                data-title="Anno"
+                                data-units="cm"
+                                data-width="80"
+                                data-height="300"
+                                data-min-value="0"
+                                data-max-value="100"
+                                data-major-ticks="0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100"
+                                data-minor-ticks="5"
+                                data-stroke-ticks="true"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-bar-begin-circle="false"
+                                data-tick-side="left"
+                                data-number-side="left"
+                                data-needle-side="left"
+                                data-needle-type="line"
+                                data-needle-width="3"
+                                data-color-needle="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-end="rgba(255, 50, 50, 0.9)"
+                                data-color-needle-shadow-up="rgba(255, 50, 50, 0)"
+                                data-color-needle-shadow-down="rgba(255, 50, 50, 0)"
+                                data-needle-end="150"
+                                data-color-bar-progress="#327ac0"
+                                
+                                data-highlights='[]'
+                                data-value-dec="1"
+                                data-value-int="0"
+                                data-value-box-stroke="1"
+                                data-value-text-shadow="0"
+                                data-font-value-size="40"
+                                data-color-value-box-shadow="0"
+                                data-color-value-box-background="rgba(226, 226, 226, 0.3)"
+        
+                                data-font-units-weight="bolder"
+                                data-font-title-weight="bolder"
+                                data-font-value-weight="bold"
+                                data-font-numbers-weight="bold"
+                                data-font-numbers-size="30"
+                                data-font-title-size="40"
+                                data-font-units-size="40"
+
+                                data-bar-width="30"
+                                data-ticks-width="40"
+                                data-ticks-width-minor="15"
+                            ></canvas>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <p id="precipitazioni"><span>Precipitazioni</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row border-top pt-2 p-3">
+                <div class="rightmargin col-sm-6">
+                    <h5>Previsione</h5>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-sm-3">
+                            <img id="forecasticon" src="/weather/weathericons/clear-day.svg" alt="-">
+                        </div>
+                        <div class="col-sm-9" id="forecastrule">
+
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <h5>Alba e tramonto</h5>
+                    <div class="row justify-content-center align-items-center">
+                        Alba: <span id="sunrise">-</span>
+                    </div>
+                    <div class="row justify-content-center align-items-center">
+                        Tramonto: <span id="sunset">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="maincontainer">
+            <div class="row">
+                <div class="col">
+                    <h2>Precipitazioni annuali</h2>
+                    <select id="rainyear" name="rainyear" onchange="createMonthRainMeter()"></select>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col linear" id="rain_meter_container">
+                    
+                </div>
+            </div>
+        </div>
+
+        <script>
+            generateYearsOptions();
+            getBindings();
+            getForecast();
+            setInterval(getForecast, 2000);
+            
+
+            var screen_width = $(window).width();
+
+            if (screen_width < 800) {
+                var gauge_size = screen_width * 0.4
+                document.getElementById("outTemp").setAttribute("data-width", gauge_size);
+                document.getElementById("outTemp").setAttribute("data-height", gauge_size);
+                document.getElementById("windSpeed").setAttribute("data-width", gauge_size);
+                document.getElementById("windSpeed").setAttribute("data-height", gauge_size);
+                document.getElementById("windDir").setAttribute("data-width", gauge_size);
+                document.getElementById("windDir").setAttribute("data-height", gauge_size);
+                document.getElementById("barometer").setAttribute("data-width", gauge_size);
+                document.getElementById("barometer").setAttribute("data-height", gauge_size);
+                document.getElementById("outHumidity").setAttribute("data-width", gauge_size);
+                document.getElementById("outHumidity").setAttribute("data-height", gauge_size);
+                
+            } else {
+                var gauge_size = 250
+
+                document.getElementById("outTemp").setAttribute("data-width", gauge_size);
+                document.getElementById("outTemp").setAttribute("data-height", gauge_size);
+                document.getElementById("windSpeed").setAttribute("data-width", gauge_size);
+                document.getElementById("windSpeed").setAttribute("data-height", gauge_size);
+                document.getElementById("windDir").setAttribute("data-width", gauge_size);
+                document.getElementById("windDir").setAttribute("data-height", gauge_size);
+                document.getElementById("barometer").setAttribute("data-width", gauge_size);
+                document.getElementById("barometer").setAttribute("data-height", gauge_size);
+                document.getElementById("outHumidity").setAttribute("data-width", gauge_size);
+                document.getElementById("outHumidity").setAttribute("data-height", gauge_size);
+            }
+
+            createMonthRainMeter();
+
+        </script>
+
+    </body>
+</html>
