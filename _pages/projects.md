@@ -101,6 +101,14 @@ at University of Trento.
   collaborative filtering, and Locality sensitive hashing to optimize query
   suggestions in a database management system using Python.
 
+
+#### [Distributed Key-Value Store in Akka](https://github.com/FabrizioSandri/distributed-systems-project)
+Inspired by Amazon Dynamo, this project introduces a DHT-based peer-to-peer
+key-value storage service implemented using Akka actors. It provides a simple
+user interface to upload/request data and issue management commands, emphasizing
+key principles of data partitioning, replication, and dynamic network
+management.
+
 #### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
 A ready-to-use setup of a standalone [Stellar blockchain](https://stellar.org/)
 based on Docker that I implemented as part of my thesis study.
