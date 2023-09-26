@@ -129,7 +129,8 @@ title: Weather Revò
                     if (this.readyState == 4 && this.status == 200){
                         
                         let result = JSON.parse(this.responseText);
-
+                        
+                        let lastUpdate = result["dateTime"];
                         let forecast_icon = result["forecastIcon"];
                         forecast_icon = forecastBindings["forecastIcon"][forecast_icon];
                         let forecast_rule = result["forecastRule"];
@@ -153,7 +154,9 @@ title: Weather Revò
                         
                         let sunrise = result["sunrise"];
                         let sunset = result["sunset"];
-
+                        
+                        let lastUpdateDate = new Date(lastUpdate * 1000);
+                        lastUpdate = lastUpdateDate.toLocaleTimeString("it-IT", {hour: '2-digit', minute:'2-digit', second:'2-digit'})
                         let sunriseDate = new Date(sunrise * 1000);
                         sunrise = sunriseDate.toLocaleTimeString("it-IT", {hour: '2-digit', minute:'2-digit'})
                         let sunsetDate = new Date(sunset * 1000);
@@ -218,6 +221,7 @@ title: Weather Revò
                         document.getElementById("humIdex").innerText = humIdex;
                         document.getElementById("sunrise").innerText = sunrise;
                         document.getElementById("sunset").innerText = sunset;
+                        document.getElementById("lastupdate").innerText = lastUpdate;
                         document.getElementById("cloudbase").setAttribute("data-value", cloudbase);
                         document.getElementById("dayRain").setAttribute("data-value", dayRain);                        
                         document.getElementById("monthRain").setAttribute("data-value", monthRain);                        
@@ -267,6 +271,7 @@ title: Weather Revò
             <div class="row">
                 <div class="col">
                     <h2>Meteo Revò</h2>
+                    <p>Last update: <span id="lastupdate"></span></p>
                 </div>
             </div>
 
