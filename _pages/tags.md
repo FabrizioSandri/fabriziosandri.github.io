@@ -11,7 +11,7 @@ nav: false
       {% assign t = tag | first %}
       {% assign posts = tag | last %}
 
-      <h4><i class="fas fa-hashtag fa-sm"></i> {{ t | capitalize }}</h4>
+      <h4 id="{{ t | downcase | replace: " ","-" }}"><i class="fas fa-hashtag fa-sm"></i> {{ t | capitalize }}</h4>
       
 
       <article>
