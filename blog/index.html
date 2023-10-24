@@ -70,23 +70,25 @@ title: blog
       </p>
       <p class="post-tags">
         <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-          <i class="fas fa-calendar fa-sm"></i> {{ year }} </a>
+          <i class="fas fa-calendar fa-sm"></i> 
+          {{ year }} 
+        </a>
 
-          {% if tags != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for tag in post.tags %}
-            <a href="/blog/tags#{{ tag | downcase | replace: " ","-" }}">
-              <i class="fas fa-hashtag fa-sm"></i> {{ tag }}</a> &nbsp;
-              {% endfor %}
-          {% endif %}
+        {% if tags != "" %}
+        &nbsp; &middot; &nbsp;
+          {% for tag in post.tags %}
+          <a href="/blog/tags#{{ tag | downcase | replace: " ","-" }}">
+            <i class="fas fa-hashtag fa-sm"></i> {{ tag }}</a> &nbsp;
+            {% endfor %}
+        {% endif %}
 
-          {% if categories != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for category in post.categories %}
-            <a href="{{ category | prepend: '/blog/category/' | prepend: site.baseurl}}">
-              <i class="fas fa-tag fa-sm"></i> {{ category }}</a> &nbsp;
-              {% endfor %}
-          {% endif %}
+        {% if categories != "" %}
+        &nbsp; &middot; &nbsp;
+          {% for category in post.categories %}
+          <a href="{{ category | prepend: '/blog/category/' | prepend: site.baseurl}}">
+            <i class="fas fa-tag fa-sm"></i> {{ category }}</a> &nbsp;
+            {% endfor %}
+        {% endif %}
     </p>
     </li>
 

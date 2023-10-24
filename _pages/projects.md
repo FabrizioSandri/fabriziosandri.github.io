@@ -85,21 +85,25 @@ This is a list of the packages that RcppDeepState-action automatically checks:
 # Coursework
 
 #### [CLIP Region Proposal Network](https://github.com/FabrizioSandri/deep-learning-project)
-Visual grounding framework written using PyTorch employing CLIP as the
-foundation. This framework was created as a project for the Deep Learning course
-at the University of Trento.
+Designed a deep learning framework, ClipRPN, to tackle visual grounding, a
+challenge linking language and perception by grounding linguistic symbols in
+visuals. Built upon the CLIP model from OpenAI, the solution converts images and
+textual descriptions into feature maps and embeddings, which are then fused and
+processed by a Region Proposal Network to predict bounding boxes in images based
+on the textual information. Implemented and evaluated the model using the
+RefCOCOg dataset, showcasing the model's ability to generate accurate bounding
+boxes around referred objects in images with an overall intersection over union
+(IOU) of 41.19%.
 
-- Applied transfer learning using OpenAI CLIP and constructed a Region Proposal
-  Network on its foundation. This allowed to leverage the pretrained
-  convolutions of CLIP ResNet for extracting region proposals from images.
 
 #### [Hybrid recommendation system](https://github.com/FabrizioSandri/data-mining-project)
-Implementation of an advanced recommendation system for the ”Data Mining” course
-at University of Trento.
-
-- Developed a hybrid recommendation system combining content-based,
-  collaborative filtering, and Locality sensitive hashing to optimize query
-  suggestions in a database management system using Python.
+Designed a cutting-edge query recommendation system focused on revolutionizing
+query recommendations within a Database Management System. Leveraged a unique
+combination of Collaborative Filtering and Locality Sensitive Hashing (LSH) to
+optimize recommendation accuracy and time efficiency. Showcased the seamless
+integration of LSH for improved item similarity searches and introduced a
+content-based strategy to develop a hybrid recommendation system, resulting in a
+improvement in query recommendation accuracy.
 
 
 #### [Distributed Key-Value Store in Akka](https://github.com/FabrizioSandri/distributed-systems-project)
