@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <h5>Machine Learning Engineer at <a href="https://www.airbus.com/">Airbus Defence and Space</a> | MSc in Computer Science </h5>
+subtitle: <h5>ML Engineer at <a href="https://www.airbus.com/">Airbus Defence and Space</a> | MSc in Computer Science </h5>
 
 profile:
   align: right
