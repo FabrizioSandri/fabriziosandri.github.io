@@ -84,6 +84,18 @@ This is a list of the packages that RcppDeepState-action automatically checks:
 
 # Coursework
 
+#### [A Comparative Study of Genetic-Based Approaches for Enhanced Hourly Temperature Predictions](https://github.com/FabrizioSandri/bio-inspired-ai-project)
+A comparative study of two genetic-based approaches for enhancing hourly
+temperature predictions. The first approach employs a Long Short-Term
+Memory(LSTM) network, optimized through Genetic Algorithms for hyperparameter
+tuning. The second approach utilizes Genetic Programming to create an
+interpretable model. The study showcases the strengths and weaknesses of both
+approaches, with the LSTM model outperforming the Genetic Programming model in
+terms of Mean Absolute Error, while the Genetic Programming model provides an
+interpretable model, which might be preferred in scenarios where computational
+cost and efficiency are important. 
+
+
 #### [CLIP Region Proposal Network](https://github.com/FabrizioSandri/deep-learning-project)
 Designed a deep learning framework, ClipRPN, to tackle visual grounding, a
 challenge linking language and perception by grounding linguistic symbols in
