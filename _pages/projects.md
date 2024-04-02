@@ -28,8 +28,8 @@ integration works on Windows and GNU/Linux based systems.
 # Open source contributions
 
 #### [DeepState](https://github.com/trailofbits/deepstate)
-- I am the author of the entire Windows implementation of the framework. Before
-this, DeepState was restricted to POSIX-compliant GNU/Linux or macOS operating
+- Author of the entire Windows implementation of the framework. Before this,
+DeepState was restricted to POSIX-compliant GNU/Linux or macOS operating
 systems. [Merged into DeepState in
 2023](https://github.com/trailofbits/deepstate/pull/428)
 
@@ -50,12 +50,12 @@ during copying operations. [Merged into FPrime in
 
 
 #### R and statistical software community contribution
-I incorporated RcppDeepState functionality into packages that can be accessed on
-both CRAN and GitHub. This enables the identification and reporting of
-memory-related problems within these packages. Through GitHub Actions'
-continuous integration system, developers can effortlessly assess their R
-packages for memory-related issues, eliminating the need to manually configure
-fuzzers and other memory detection utilities.
+I incorporated RcppDeepState into packages that can be accessed on both CRAN and
+GitHub. This enables the identification and reporting of memory-related problems
+within these packages. Through GitHub Actions' continuous integration system,
+developers can effortlessly assess their R packages for memory-related issues,
+eliminating the need to manually configure fuzzers and other memory detection
+utilities.
 
 This is a list of the packages that RcppDeepState-action automatically checks:
 
