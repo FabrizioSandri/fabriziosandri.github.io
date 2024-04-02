@@ -13,29 +13,16 @@ package extends the DeepState framework to fully support Rcpp based packages.
 RcppDeepState allows to fuzz test R library's C++ code in order to find
 more subtle bugs like memory leaks or even more general memory errors.
 
-- Reduced the time necessary to setup and run RcppDeepstate from more than 30
-  minutes to less than 1 minute. This improvement makes it possible for
-  RcppDeepState-action to operate quickly inside the runner.
-- Enhanced code quality of RcppDeepState and resolved over 20 bugs in the
-  library.
-- [See my blog](https://fabriziosandri.github.io/gsoc-2022-blog)
-
 #### [RcppDeepState-action](https://github.com/FabrizioSandri/RcppDeepState-action)
 I am the author of RcppDeepState-action, a GitHub Action which enables users who
 develop R packages using Rcpp to find memory leaks in their code that is hosted
 on GitHub.
 
-- As part of the [Google Summer of Code
-  2022](https://summerofcode.withgoogle.com/programs/2022/projects/t87xbcg2) I
-  developed this GitHub Action for non deterministic fuzz testing with
-  RcppDeepState.
-
 
 #### [R-integration](https://github.com/FabrizioSandri/r-integration)
 I am the author of R-integration, a Node.js library that allows to execute
 arbitrary R commands or scripts directly from the Node.js environment. This
-integration works on Windows and GNU/Linux based systems and uses basic
-primitives to access the R binary.
+integration works on Windows and GNU/Linux based systems.
 
 
 # Open source contributions
