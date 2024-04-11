@@ -7,19 +7,19 @@ nav: true
 nav_order: 2
 ---
 
-#### [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState)
+##### [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState)
 RcppDeepState is an R library to fuzz test compiled code in Rcpp packages. The
 package extends the DeepState framework to fully support Rcpp based packages.
 RcppDeepState allows to fuzz test R library's C++ code in order to find
 more subtle bugs like memory leaks or even more general memory errors.
 
-#### [RcppDeepState-action](https://github.com/FabrizioSandri/RcppDeepState-action)
+##### [RcppDeepState-action](https://github.com/FabrizioSandri/RcppDeepState-action)
 I am the author of RcppDeepState-action, a GitHub Action which enables users who
 develop R packages using Rcpp to find memory leaks in their code that is hosted
 on GitHub.
 
 
-#### [R-integration](https://github.com/FabrizioSandri/r-integration)
+##### [R-integration](https://github.com/FabrizioSandri/r-integration)
 I am the author of R-integration, a Node.js library that allows to execute
 arbitrary R commands or scripts directly from the Node.js environment. This
 integration works on Windows and GNU/Linux based systems.
@@ -27,13 +27,13 @@ integration works on Windows and GNU/Linux based systems.
 
 # Open source contributions
 
-#### [DeepState](https://github.com/trailofbits/deepstate)
+##### [DeepState](https://github.com/trailofbits/deepstate)
 - Author of the entire Windows implementation of the framework. Before this,
 DeepState was restricted to POSIX-compliant GNU/Linux or macOS operating
 systems. [Merged into DeepState in
 2023](https://github.com/trailofbits/deepstate/pull/428)
 
-#### [NASA FPrime](https://github.com/nasa/fprime)
+##### [NASA FPrime](https://github.com/nasa/fprime)
 - Resolved potential overflow issue arising from overlapping strings in memory
 during copying operations. [Merged into FPrime in
 2021](https://github.com/nasa/fprime/pull/1164)
@@ -41,7 +41,7 @@ during copying operations. [Merged into FPrime in
   utilities. [Merged into FPrime in
   2021](https://github.com/nasa/fprime/pull/1151)
 
-#### [Italian digital public services](https://github.com/italia/daf-recipes)
+##### [Italian digital public services](https://github.com/italia/daf-recipes)
 - Led team effort to devise a Docker-based system for aggregating and monitoring
   vast data sets.
 - Integrated 4 services with Docker-compose reducing to few seconds the time
@@ -49,7 +49,7 @@ during copying operations. [Merged into FPrime in
   2017](https://github.com/italia/daf-recipes/commits?author=FabrizioSandri)
 
 
-#### R and statistical software community contribution
+##### R and statistical software community contribution
 I incorporated RcppDeepState into packages that can be accessed on both CRAN and
 GitHub. This enables the identification and reporting of memory-related problems
 within these packages. Through GitHub Actions' continuous integration system,
@@ -71,7 +71,7 @@ This is a list of the packages that RcppDeepState-action automatically checks:
 
 # Coursework
 
-#### [A Comparative Study of Genetic-Based Approaches for Enhanced Hourly Temperature Predictions](https://github.com/FabrizioSandri/bio-inspired-ai-project)
+##### [A Comparative Study of Genetic-Based Approaches for Enhanced Hourly Temperature Predictions](https://github.com/FabrizioSandri/bio-inspired-ai-project)
 A comparative study of two genetic-based approaches for enhancing hourly
 temperature predictions. The first approach employs a Long Short-Term
 Memory(LSTM) network, optimized through Genetic Algorithms for hyperparameter
@@ -83,7 +83,7 @@ interpretable model, which might be preferred in scenarios where computational
 cost and efficiency are important. 
 
 
-#### [CLIP Region Proposal Network](https://github.com/FabrizioSandri/deep-learning-project)
+##### [CLIP Region Proposal Network](https://github.com/FabrizioSandri/deep-learning-project)
 Designed a deep learning framework, ClipRPN, to tackle visual grounding, a
 challenge linking language and perception by grounding linguistic symbols in
 visuals. Built upon the CLIP model from OpenAI, the solution converts images and
@@ -95,7 +95,7 @@ boxes around referred objects in images with an overall intersection over union
 (IOU) of 41.19%.
 
 
-#### [Hybrid recommendation system](https://github.com/FabrizioSandri/data-mining-project)
+##### [Hybrid recommendation system](https://github.com/FabrizioSandri/data-mining-project)
 Designed a cutting-edge query recommendation system focused on revolutionizing
 query recommendations within a Database Management System. Leveraged a unique
 combination of Collaborative Filtering and Locality Sensitive Hashing (LSH) to
@@ -105,21 +105,21 @@ content-based strategy to develop a hybrid recommendation system, resulting in a
 improvement in query recommendation accuracy.
 
 
-#### [Distributed Key-Value Store in Akka](https://github.com/FabrizioSandri/distributed-systems-project)
+##### [Distributed Key-Value Store in Akka](https://github.com/FabrizioSandri/distributed-systems-project)
 Inspired by Amazon Dynamo, this project introduces a DHT-based peer-to-peer
 key-value storage service implemented using Akka actors. It provides a simple
 user interface to upload/request data and issue management commands, emphasizing
 key principles of data partitioning, replication, and dynamic network
 management.
 
-#### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
+##### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
 A ready-to-use setup of a standalone [Stellar blockchain](https://stellar.org/)
 based on Docker that I implemented as part of my thesis study.
 
 - Docker-compose implementation of a Stellar validator node that runs on a fully
   private blockchain, separated from the “public” and “test” one.
 
-#### [LR(0) automata generator](https://github.com/FabrizioSandri/LR-0-automa-generator)
+##### [LR(0) automata generator](https://github.com/FabrizioSandri/LR-0-automa-generator)
 Parsing automa generator written in C++ created as final project for the ”Formal
 Languages and Compilers” course at University of Trento.
 
