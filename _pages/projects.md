@@ -49,7 +49,7 @@ during copying operations. [Merged into FPrime in
   2017](https://github.com/italia/daf-recipes/commits?author=FabrizioSandri)
 
 
-##### R and statistical software community contribution
+##### [The R Project for Statistical Computing](https://www.r-project.org/)
 I incorporated RcppDeepState into packages that can be accessed on both CRAN and
 GitHub. This enables the identification and reporting of memory-related problems
 within these packages. Through GitHub Actions' continuous integration system,
@@ -73,26 +73,25 @@ This is a list of the packages that RcppDeepState-action automatically checks:
 
 ##### [A Comparative Study of Genetic-Based Approaches for Enhanced Hourly Temperature Predictions](https://github.com/FabrizioSandri/bio-inspired-ai-project)
 A comparative study of two genetic-based approaches for enhancing hourly
-temperature predictions. The first approach employs a Long Short-Term
-Memory(LSTM) network, optimized through Genetic Algorithms for hyperparameter
-tuning. The second approach utilizes Genetic Programming to create an
-interpretable model. The study showcases the strengths and weaknesses of both
-approaches, with the LSTM model outperforming the Genetic Programming model in
-terms of Mean Absolute Error, while the Genetic Programming model provides an
-interpretable model, which might be preferred in scenarios where computational
-cost and efficiency are important. 
+temperature predictions. The first approach employs a LSTM optimized through
+Genetic Algorithms for hyperparameter tuning. The second approach utilizes
+Genetic Programming to create an interpretable model. The study showcases the
+strengths and weaknesses of both approaches, with the LSTM model outperforming
+the Genetic Programming model in terms of Mean Absolute Error, while the Genetic
+Programming model provides an interpretable model, which might be preferred in
+scenarios where efficiency is important. 
 
 
 ##### [CLIP Region Proposal Network](https://github.com/FabrizioSandri/deep-learning-project)
-Designed a deep learning framework, ClipRPN, to tackle visual grounding, a
-challenge linking language and perception by grounding linguistic symbols in
-visuals. Built upon the CLIP model from OpenAI, the solution converts images and
-textual descriptions into feature maps and embeddings, which are then fused and
+A deep learning framework, ClipRPN, to tackle visual grounding, a challenge
+linking language and perception by grounding linguistic symbols in visuals.
+Built upon the CLIP model from OpenAI, the solution converts images and textual
+descriptions into feature maps and embeddings, which are then fused and
 processed by a Region Proposal Network to predict bounding boxes in images based
 on the textual information. Implemented and evaluated the model using the
 RefCOCOg dataset, showcasing the model's ability to generate accurate bounding
-boxes around referred objects in images with an overall intersection over union
-(IOU) of 41.19%.
+boxes around referred objects in images with an overall intersection over
+union(IOU) of 41.19%.
 
 
 ##### [Hybrid recommendation system](https://github.com/FabrizioSandri/data-mining-project)
@@ -114,10 +113,8 @@ management.
 
 ##### [Standalone Stellar Blockchain](https://github.com/FabrizioSandri/Standalone-stellar-blockchain)
 A ready-to-use setup of a standalone [Stellar blockchain](https://stellar.org/)
-based on Docker that I implemented as part of my thesis study.
-
-- Docker-compose implementation of a Stellar validator node that runs on a fully
-  private blockchain, separated from the “public” and “test” one.
+based on Docker that I implemented as part of my thesis study. Implementation of
+a Stellar validator node that runs on a fully private blockchain.
 
 ##### [LR(0) automata generator](https://github.com/FabrizioSandri/LR-0-automa-generator)
 Parsing automa generator written in C++ created as final project for the ”Formal
