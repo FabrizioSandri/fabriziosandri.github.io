@@ -4,4 +4,4 @@ date: 2022-07-21
 inline: true
 ---
 
-Graduated from the B.Sc Program in Computer Science at the University of Trento(Italy).
+Graduated with a B.Sc. in Computer Science from the University of Trento, Italy.
