@@ -5,7 +5,8 @@ description: An introduction to GitHub Actions and some consideration before wri
 badges: true
 tags: [Google Summer of Code, GitHub Action]
 comments: false
-title: RcppDeepState's GitHub Action considerations 
+title: RcppDeepState's GitHub Action considerations
+related_posts: false
 ---
 
 ## Introduction

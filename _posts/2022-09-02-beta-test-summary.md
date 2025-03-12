@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Beta testing results
+related_posts: false
 ---
 
 ## Introduction

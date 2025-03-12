@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Moving to a composite GitHub Action
+related_posts: false
 ---
 
 ## Introduction

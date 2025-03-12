@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, RcppDeepState]
 comments: false
 title: Write a custom test harness for functions with unsupported datatypes
+related_posts: false
 ---
 
 

@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: GitHub action's execution time
+related_posts: false
 ---
 
 ## Introduction

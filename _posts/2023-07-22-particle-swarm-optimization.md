@@ -6,6 +6,7 @@ badges: true
 tags: [Optimization]
 comments: false
 title: Particle Swarm Optimization
+related_posts: false
 ---
 
 <div class="jupyter-notebook"

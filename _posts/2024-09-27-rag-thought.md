@@ -6,6 +6,7 @@ badges: true
 tags: [AI]
 comments: false
 title: Retrieval-Augmented Generation (RAG) in the industries.
+related_posts: false
 ---
 
 #### A quick thought on Retrieval-Augmented Generation (RAG) and its transformative potential.

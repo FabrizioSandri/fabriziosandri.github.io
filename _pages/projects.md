@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 description: List of projects I've been actively engaged in over the years.
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 ##### [RcppDeepState](https://github.com/FabrizioSandri/RcppDeepState)

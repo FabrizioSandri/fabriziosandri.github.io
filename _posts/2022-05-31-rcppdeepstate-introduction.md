@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, RcppDeepState]
 comments: false
 title: Introduction to RcppDeepState
+related_posts: false
 ---
 
 # Introduction to RcppDeepState

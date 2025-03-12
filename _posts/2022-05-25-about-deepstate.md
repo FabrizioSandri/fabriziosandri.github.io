@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, DeepState]
 comments: false
 title: DeepState introduction
+related_posts: false
 ---
 
 # DeepState Introduction

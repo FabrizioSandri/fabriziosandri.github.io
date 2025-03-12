@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code]
 comments: false
 title: My Google Summer of Code experience 
+related_posts: false
 ---
 
 ## Introduction

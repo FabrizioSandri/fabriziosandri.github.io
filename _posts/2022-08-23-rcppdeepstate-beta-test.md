@@ -6,6 +6,7 @@ badges: true
 tags: [Google Summer of Code, GitHub Action]
 comments: false
 title: Beta test RcppDeepState-action on GitHub hosted CRAN packages 
+related_posts: false
 ---
 
 
