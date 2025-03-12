@@ -217,7 +217,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 25%;
 
     .address {
       p {
@@ -1425,7 +1425,7 @@ figure.cover {
   margin-bottom: 0em;
 }
 
-@media only screen and  (max-width: 43em) {  
+@media only screen and (max-width: 43em) {  
   .card-img{
     display: none;
   }
@@ -1446,7 +1446,7 @@ figure.cover {
   }
 }
 
-@media only screen and  (min-width: 43em) {  
+@media only screen and (min-width: 43em) {  
   .card-img{
     height: 10rem;
     width: 10rem;
