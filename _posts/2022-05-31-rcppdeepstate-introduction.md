@@ -259,4 +259,4 @@ In this post we have seen how to use RcppDeepState auxiliary functions to manual
 
 [^1]: [Rcpp package on CRAN](https://cran.r-project.org/web/packages/Rcpp/index.html)
 [^2]: [Akhila Chowdary blog](https://akhikolla.github.io/)
-[^3]: [DeepState symbols definition](https://fabriziosandri.github.io/gsoc-2022-blog/deepstate/fuzz/c++/2022/05/25/about-deepstate.html#symbols-definition)
+[^3]: [DeepState symbols definition](https://fabriziosandri.github.io/gsoc-2022-blog/deepstate/2022/05/25/about-deepstate.html#symbols-definition)

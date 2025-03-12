@@ -230,4 +230,4 @@ Using only one tool is not always the best approach to find subtle programming e
 
 [^1]: [Valgrind tools](https://valgrind.org/info/tools.html)
 [^2]: [Heap overflow](https://cwe.mitre.org/data/definitions/122.html)
-[^3]: [Test Harness creation guide](https://fabriziosandri.github.io/gsoc-2022-blog/deepstate/fuzz/c++/2022/05/25/about-deepstate.html)
+[^3]: [Test Harness creation guide](https://fabriziosandri.github.io/gsoc-2022-blog/deepstate/2022/05/25/about-deepstate.html)
