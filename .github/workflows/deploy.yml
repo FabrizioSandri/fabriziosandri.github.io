@@ -59,9 +59,12 @@ on:
       - "!README.md"
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
-
+  contents: read
+  pages: write
+  id-token: write
+  
 jobs:
   build:
     # available images: https://github.com/actions/runner-images#available-images
@@ -104,6 +107,8 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
+
+
   # Deployment job
   deploy:
     environment:
