@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: ML Engineer @ Shopfully | Ex ML Engineer @ <a href="https://www.airbus.com/">Airbus Defence and Space</a>
+subtitle: Machine Learning Engineer | Open Source Developer
 
 profile:
   align: right
