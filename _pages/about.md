@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm a Machine Learning Engineer, currently working at Shopfully. In 2024, I joined <a href="https://www.airbus.com/">Airbus Defence and Space</a> as a Machine Learning Engineer, working on cutting-edge aerospace projects.
+I'm a Machine Learning Engineer with a strong passion for open-source. In 2024, I joined <a href="https://www.airbus.com/">Airbus Defence and Space</a> as a Machine Learning Engineer, working on cutting-edge aerospace projects.
 
 I earned both my Bachelor’s and Master’s degrees (cum laude) from the University of Trento in 2022 and 2024, respectively.
 
