@@ -6,7 +6,7 @@ subtitle: Machine Learning Engineer | Open Source Developer
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <a href="mailto:sandri.fabr@gmail.com">sandri.fabr@gmail.com</a>
